@@ -1,5 +1,13 @@
+import { CatalogPage } from "../components/CatalogPage/CatalogPage";
+import { PageLayout } from "../components/PageLayout";
+import { useThemeState } from "../components/themeState";
+
 export default function Catalog() {
-    return (
-        <h1>cata</h1>
-    )
+  const {currentTheme, changeTheme} = useThemeState();
+
+  return (
+    <PageLayout currentTheme={currentTheme} changeTheme={changeTheme}>
+      <CatalogPage currentTheme={currentTheme} />
+    </PageLayout>
+  );
 }

@@ -2,7 +2,7 @@ import s from "./MainPage.module.css";
 
 export function MainPage({ currentTheme }) {
   return (
-    <div className={currentTheme && `${s.nightTheme}`}>
+    <div className={`${s.mainPage} ${currentTheme && `${s.nightTheme}`}`}>
       <div className={s.pa1}>
         <div className={s.pa1_container}>
           <h1 className={s.mainTittle}>Velo</h1>
