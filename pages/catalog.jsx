@@ -6,6 +6,7 @@ import { AppContext } from "../contexts/AppContext";
 export default function Catalog() {
   const { currentTheme, setCurrentTheme } = useContext(AppContext);
   const { activeFilter, setActiveFilter } = useContext(AppContext);
+  const { tovarList, setTovarList } = useContext(AppContext);
 
   return (
     <PageLayout currentTheme={currentTheme} setCurrentTheme={setCurrentTheme}>
@@ -13,6 +14,7 @@ export default function Catalog() {
         currentTheme={currentTheme}
         activeFilter={activeFilter}
         setActiveFilter={setActiveFilter}
+        tovarList={tovarList}
       />
     </PageLayout>
   );

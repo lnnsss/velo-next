@@ -5,10 +5,15 @@ import { PageLayout } from "../components/PageLayout";
 
 export default function Add() {
   const { currentTheme, setCurrentTheme } = useContext(AppContext);
+  const { tovarList, setTovarList } = useContext(AppContext);
 
   return (
     <PageLayout currentTheme={currentTheme} setCurrentTheme={setCurrentTheme}>
-      <AddPage currentTheme={currentTheme} />
+      <AddPage
+        currentTheme={currentTheme}
+        tovarList={tovarList}
+        setTovarList={setTovarList}
+      />
     </PageLayout>
   );
 }
