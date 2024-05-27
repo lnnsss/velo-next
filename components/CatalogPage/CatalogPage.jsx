@@ -141,19 +141,18 @@ export function CatalogPage({ currentTheme, activeFilter, setActiveFilter }) {
       setActiveFilter={setActiveFilter}
     />
   ));
-  const displayTovarList = activeFilter === "Ru" || activeFilter === "En"
-    ? tovarList
-    .filter((el) => el.lang === activeFilter || activeFilter === "All")
-    .map((item) => <TovarCard key={item.id} item={item} />)
-    : activeFilter[0] === "<"
-    ? tovarList
-    .filter((el) => el.price <= 30 || activeFilter === "All")
-    .map((item) => <TovarCard key={item.id} item={item} />)
-    : tovarList
-    .filter((el) => el.price > 30 || activeFilter === "All")
-    .map((item) => <TovarCard key={item.id} item={item} />)
-    ;
-
+  const displayTovarList =
+    activeFilter === "Ru" || activeFilter === "En"
+      ? tovarList
+          .filter((el) => el.lang === activeFilter || activeFilter === "All")
+          .map((item) => <TovarCard key={item.id} item={item} />)
+      : activeFilter[0] === "<"
+      ? tovarList
+          .filter((el) => el.price <= 30 || activeFilter === "All")
+          .map((item) => <TovarCard key={item.id} item={item} />)
+      : tovarList
+          .filter((el) => el.price > 30 || activeFilter === "All")
+          .map((item) => <TovarCard key={item.id} item={item} />);
   return (
     <div className={`${s.catalogPage} ${currentTheme && `${s.nightTheme}`}`}>
       <div className={s.pa1}>
@@ -172,7 +171,7 @@ export function CatalogPage({ currentTheme, activeFilter, setActiveFilter }) {
 
 function TovarCard(item) {
   return (
-    <div className={`${s.tovar} ${item.item.lang}`} id={`item_${item.item.id}`}>
+    <div className={`${s.tovar} ${item.item.lang}`} id={`item_${item.item.id}`} key={item.item.id}>
       <Image
         src={item.item.img}
         alt={item.item.title}

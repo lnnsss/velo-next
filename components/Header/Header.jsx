@@ -33,13 +33,13 @@ export function Header({ currentTheme, setCurrentTheme }) {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className={s.header_link}>
-                  О наc
+                <Link href="/add" className={s.header_link}>
+                  Добавить
                 </Link>
               </li>
               <li>
-                <Link href="/add" className={s.header_link}>
-                  Добавить
+                <Link href="/about" className={s.header_link}>
+                  О наc
                 </Link>
               </li>
               <li className={s.header_link} id="themeBtn">
