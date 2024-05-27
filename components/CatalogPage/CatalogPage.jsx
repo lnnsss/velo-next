@@ -1,4 +1,3 @@
-import { useState } from "react";
 import s from "./CatalogPage.module.css";
 import Image from "next/image";
 
@@ -9,7 +8,7 @@ const tovarList = [
     description: "LILDRUGHILL",
     price: 25,
     img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2Fcf79a509e5d49e423cb000258fd69ccf.1000x1000x1.png",
-    lang: "ru",
+    lang: "Ru",
   },
   {
     id: 2,
@@ -17,7 +16,7 @@ const tovarList = [
     description: "LOVV66",
     price: 20,
     img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2F61db3378a0c179f5a3ef0c8ac90ae0ea.1000x1000x1.png",
-    lang: "ru",
+    lang: "Ru",
   },
   {
     id: 3,
@@ -25,7 +24,7 @@ const tovarList = [
     description: "Kendrick Lamar",
     price: 50,
     img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2Ff3f77222e1b615e0a10354ea6282ff22.1000x1000x1.png",
-    lang: "en",
+    lang: "En",
   },
   {
     id: 4,
@@ -33,7 +32,7 @@ const tovarList = [
     description: "SALUKI",
     price: 50,
     img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2Fb487fcefdace88d0cf74cfc770cd36ae.1000x1000x1.png",
-    lang: "ru",
+    lang: "Ru",
   },
   {
     id: 5,
@@ -41,7 +40,7 @@ const tovarList = [
     description: "Don Toliver",
     price: 30,
     img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2F4001a0283899911145eb13d3857b8cb3.1000x1000x1.png",
-    lang: "en",
+    lang: "En",
   },
   {
     id: 6,
@@ -49,7 +48,7 @@ const tovarList = [
     description: "LIL KRYSTALLL",
     price: 30,
     img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2F711e4a65113312a86fe551ffcbb34b1b.1000x1000x1.png",
-    lang: "ru",
+    lang: "Ru",
   },
   {
     id: 7,
@@ -57,7 +56,7 @@ const tovarList = [
     description: "Платина",
     price: 30,
     img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2F6fa2a1df192bb6b8deee5c45bef2188e.1000x1000x1.png",
-    lang: "ru",
+    lang: "Ru",
   },
   {
     id: 8,
@@ -65,7 +64,7 @@ const tovarList = [
     description: "Drake",
     price: 35,
     img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2Ffa02d8bc4c7ee74b5a1408c2be032fea.1000x1000x1.png",
-    lang: "en",
+    lang: "En",
   },
   {
     id: 9,
@@ -73,7 +72,7 @@ const tovarList = [
     description: "LILDRUGHILL",
     price: 30,
     img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2F887904ba378e1843164a6a9aa0096136.1000x1000x1.png",
-    lang: "ru",
+    lang: "Ru",
   },
   {
     id: 10,
@@ -81,7 +80,7 @@ const tovarList = [
     description: "ROCKET",
     price: 20,
     img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2F909b5b9875c5ab3e44b1f0d04c67bf37.1000x1000x1.png",
-    lang: "ru",
+    lang: "Ru",
   },
   {
     id: 11,
@@ -89,7 +88,7 @@ const tovarList = [
     description: "Metro Boomin",
     price: 50,
     img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2F38a14946958b6dd834a697c217d89488.1000x1000x1.jpg",
-    lang: "en",
+    lang: "En",
   },
   {
     id: 12,
@@ -97,7 +96,7 @@ const tovarList = [
     description: "Dina Ayada",
     price: 30,
     img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2F4b8dd2659fda75bff4e1483463247e3c.1000x1000x1.png",
-    lang: "en",
+    lang: "En",
   },
   {
     id: 13,
@@ -105,7 +104,7 @@ const tovarList = [
     description: "PHARAOH",
     price: 50,
     img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2Fabf929ba95ac8de8f8fd67f6e6580611.1000x1000x1.png",
-    lang: "ru",
+    lang: "Ru",
   },
   {
     id: 14,
@@ -113,7 +112,7 @@ const tovarList = [
     description: "Central Cee",
     price: 35,
     img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2Fe2e71c4727c43b794627d6f6e31b603a.1000x1000x1.png",
-    lang: "en",
+    lang: "En",
   },
   {
     id: 15,
@@ -121,7 +120,7 @@ const tovarList = [
     description: "aarne",
     price: 40,
     img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2F977075534279f0726fac84beebeb9ccb.1000x1000x1.png",
-    lang: "ru",
+    lang: "Ru",
   },
   {
     id: 16,
@@ -129,17 +128,12 @@ const tovarList = [
     description: "OBLADAET",
     price: 30,
     img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2F89d85810150a9bf1acd23ffaa149a5e8.1000x1000x1.png",
-    lang: "ru",
+    lang: "Ru",
   },
 ];
+const filterList = ["All", "Ru", "En", "< 30$", "> 30$"];
 
-const displayTovarList = tovarList.map((item) => (
-  <TovarCard key={item.id} item={item} />
-));
-
-export function CatalogPage({ currentTheme }) {
-  const [activeFilter, setActiveFilter] = useState("All");
-  const filterList = ["All", "Ru", "En", "до 25$", "от 25$"];
+export function CatalogPage({ currentTheme, activeFilter, setActiveFilter }) {
   const displayFilterList = filterList.map((el) => (
     <Filter
       children={el}
@@ -147,6 +141,18 @@ export function CatalogPage({ currentTheme }) {
       setActiveFilter={setActiveFilter}
     />
   ));
+  const displayTovarList = activeFilter === "Ru" || activeFilter === "En"
+    ? tovarList
+    .filter((el) => el.lang === activeFilter || activeFilter === "All")
+    .map((item) => <TovarCard key={item.id} item={item} />)
+    : activeFilter[0] === "<"
+    ? tovarList
+    .filter((el) => el.price <= 30 || activeFilter === "All")
+    .map((item) => <TovarCard key={item.id} item={item} />)
+    : tovarList
+    .filter((el) => el.price > 30 || activeFilter === "All")
+    .map((item) => <TovarCard key={item.id} item={item} />)
+    ;
 
   return (
     <div className={`${s.catalogPage} ${currentTheme && `${s.nightTheme}`}`}>
@@ -188,7 +194,9 @@ function Filter({ children, activeFilter, setActiveFilter }) {
   return (
     <div
       key={children}
-      className={`${s.filter} ${activeFilter === children ? `${s.active}` : ''}`}
+      className={`${s.filter} ${
+        activeFilter === children ? `${s.active}` : ""
+      }`}
       onClick={() => setActiveFilter(children)}
     >
       {children}

@@ -53,6 +53,7 @@
 .filter.active {
   background-color: var(--red);
   color: var(--white);
+  border: 1px solid var(--red);
 }
 .filter:hover {
   border: 1px solid var(--red);
