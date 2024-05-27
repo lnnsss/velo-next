@@ -15,7 +15,7 @@ export function Footer() {
             Velo
           </a>
           <div className={s.socials}>
-            <a target="_blank" href="https://github.com/lnsplayer">
+            <a target="_blank" href="https://github.com/lnnsss">
               <Image
                 src={gh}
                 alt="github"

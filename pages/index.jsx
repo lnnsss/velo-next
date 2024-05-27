@@ -1,15 +1,14 @@
 import { MainPage } from "../components/MainPage/MainPage";
 import { PageLayout } from "../components/PageLayout";
-import { useThemeState } from "../components/themeState";
+import { useContext } from 'react';
+import { AppContext } from "../contexts/AppContext";
 
 export default function HomePage() {
-  const {currentTheme, changeTheme} = useThemeState();
+  const { currentTheme, setCurrentTheme } = useContext(AppContext);
 
   return (
-    <PageLayout currentTheme={currentTheme} changeTheme={changeTheme}>
-      <MainPage currentTheme={currentTheme} changeTheme={changeTheme} />
+    <PageLayout currentTheme={currentTheme} setCurrentTheme={setCurrentTheme}>
+      <MainPage currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} />
     </PageLayout>
   );
 }
-
-

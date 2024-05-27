@@ -6,7 +6,7 @@ import Link from "next/link";
 import dayTheme from "./images/dayIcon.png";
 import nightTheme from "./images/nightIcon.png";
 
-export function Header({ currentTheme, changeTheme }) {
+export function Header({ currentTheme, setCurrentTheme }) {
   const [burgerActive, setBurgerActive] = useState(false);
 
   return (
@@ -47,7 +47,7 @@ export function Header({ currentTheme, changeTheme }) {
                   src={currentTheme ? nightTheme : dayTheme}
                   alt="theme"
                   className={s.header_themeImg}
-                  onClick={() => changeTheme(!currentTheme)}
+                  onClick={() => setCurrentTheme(!currentTheme)}
                 />
               </li>
             </ul>
