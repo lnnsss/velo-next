@@ -53,6 +53,7 @@
   font-size: 18px;
   cursor: pointer;
   user-select: none;
+  position: relative;
 }
 .header_link:hover {
   text-decoration: underline;
@@ -63,6 +64,21 @@
   top: 4px;
   width: 18px;
   height: 18px;
+}
+.korzinaCounter {
+    position: absolute;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: var(--white);
+    color: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    right: -10px;
+    top: -10px;
 }
 
 /*----media---------------------------------*/

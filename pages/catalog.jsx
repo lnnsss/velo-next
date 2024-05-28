@@ -7,9 +7,10 @@ export default function Catalog() {
   const { currentTheme, setCurrentTheme } = useContext(AppContext);
   const { activeFilter, setActiveFilter } = useContext(AppContext);
   const { tovarList, setTovarList } = useContext(AppContext);
+  const { cartList, setCartList } = useContext(AppContext);
 
   return (
-    <PageLayout currentTheme={currentTheme} setCurrentTheme={setCurrentTheme}>
+    <PageLayout currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} cartList={cartList}>
       <CatalogPage
         currentTheme={currentTheme}
         activeFilter={activeFilter}

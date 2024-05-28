@@ -6,14 +6,16 @@ import Link from "next/link";
 import dayTheme from "./images/dayIcon.png";
 import nightTheme from "./images/nightIcon.png";
 
-export function Header({ currentTheme, setCurrentTheme }) {
+export function Header({ currentTheme, setCurrentTheme, cartList }) {
   const [burgerActive, setBurgerActive] = useState(false);
 
   return (
     <header className={s.header}>
       <div className={s.header_container}>
         <div className={s.header_body}>
-          <Link href="/" className={s.header_logo}>&#9733;-&#9733;</Link>
+          <Link href="/" className={s.header_logo}>
+            &#9733;-&#9733;
+          </Link>
           <div
             className={`${s.header_burger} ${burgerActive && s.active}`}
             onClick={() => setBurgerActive(!burgerActive)}
@@ -25,6 +27,12 @@ export function Header({ currentTheme, setCurrentTheme }) {
               <li>
                 <Link href="/catalog" className={s.header_link}>
                   Каталог
+                </Link>
+              </li>
+              <li>
+                <Link href="/cart" className={s.header_link}>
+                  Корзина
+                  {cartList.length ? <div className={s.korzinaCounter}>{cartList.length}</div> : ''}
                 </Link>
               </li>
               <li>

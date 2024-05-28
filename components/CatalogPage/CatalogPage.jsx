@@ -24,6 +24,7 @@ export function CatalogPage({ currentTheme, activeFilter, setActiveFilter, tovar
       : tovarList
           .filter((el) => el.price > 30 || activeFilter === "All")
           .map((item) => <TovarCard key={item.id} item={item} />);
+          
   return (
     <div className={`${s.catalogPage} ${currentTheme && `${s.nightTheme}`}`}>
       <div className={s.pa1}>

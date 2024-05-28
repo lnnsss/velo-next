@@ -1,15 +1,15 @@
 import { useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
-import { ReviewsPage } from "../components/ReviewsPage/ReviewsPage";
+import { CartPage } from "../components/CartPage/CartPage";
 import { PageLayout } from "../components/PageLayout";
 
-export default function Reviews() {
+export default function Cart() {
   const { currentTheme, setCurrentTheme } = useContext(AppContext);
   const { cartList, setCartList } = useContext(AppContext);
 
   return (
     <PageLayout currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} cartList={cartList}>
-      <ReviewsPage currentTheme={currentTheme} />
+      <CartPage currentTheme={currentTheme} cartList={cartList} setCartList={setCartList} />
     </PageLayout>
   );
 }
