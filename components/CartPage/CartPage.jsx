@@ -1,10 +1,9 @@
 import s from "./CartPage.module.css";
-import { useState } from "react";
-import { KorzinaItem } from "./miniComponents/KorzinaItem";
+import { BuyFooter } from "./miniComponents/BuyFooter";
+import { CartItem } from "./miniComponents/CartItem";
 
 export function CartPage({ currentTheme, cartList, setCartList }) {
-  const [itogoPriceCounter, setItogoPriceCounter] = useState(0);
-  const displayCartList = cartList.map((item) => <KorzinaItem item={item} />);
+  const displayCartList = cartList.map((item) => <CartItem item={item} />);
 
   return (
     <div className={`${s.cartPage} ${currentTheme && `${s.nightTheme}`}`}>
@@ -23,19 +22,11 @@ export function CartPage({ currentTheme, cartList, setCartList }) {
               <span className={s.pusto}>Пусто</span>
             )}
           </div>
-          <div className={`${s.buyFooter} ${s._container}`}>
-            <div className={s.buyFooter_left}>
-              <span className={s.itogo}>Итого:</span>
-              <span className={s.itogoPrice}>{itogoPriceCounter}$</span>
-            </div>
-            <div className={s.buyFooter_right}>
-              <button className={`${s.buyFooter_btn} ${s.buyBtn}`}>
-                Купить
-              </button>
-            </div>
-          </div>
+          <BuyFooter />
         </div>
       </div>
     </div>
   );
 }
+
+

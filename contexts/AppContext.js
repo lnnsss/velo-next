@@ -135,24 +135,7 @@ export const AppProvider = ({ children }) => {
       lang: "Ru",
     },
   ]);
-  const [cartList, setCartList] = useState([
-    {
-      id: 1,
-      title: "test drive: archive",
-      description: "LILDRUGHILL",
-      price: 25,
-      img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2Fcf79a509e5d49e423cb000258fd69ccf.1000x1000x1.png",
-      lang: "ru",
-    },
-    {
-      id: 2,
-      title: "PHYSICAL PAIN",
-      description: "LOVV66",
-      price: 20,
-      img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2F61db3378a0c179f5a3ef0c8ac90ae0ea.1000x1000x1.png",
-      lang: "ru",
-    },
-  ]);
+  const [cartList, setCartList] = useState([]);
 
   return (
     <AppContext.Provider

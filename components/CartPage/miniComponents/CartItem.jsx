@@ -3,11 +3,11 @@ import s from "./../CartPage.module.css";
 import Image from "next/image";
 import { AppContext } from "../../../contexts/AppContext";
 
-export function KorzinaItem(item) {
+export function CartItem(item) {
   const { cartList, setCartList } = useContext(AppContext);
   const handleCartItemDel = (e) => {
     let itemId = e.target.id.slice(4);
-    setCartList(cartList.filter(el => el.id != itemId));
+    setCartList(cartList.filter((el) => el.id != itemId));
   };
 
   return (
