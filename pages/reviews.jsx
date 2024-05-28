@@ -8,7 +8,7 @@ export default function Reviews() {
   const { cartList, setCartList } = useContext(AppContext);
 
   return (
-    <PageLayout currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} cartList={cartList}>
+    <PageLayout title="Отзывы" currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} cartList={cartList}>
       <ReviewsPage currentTheme={currentTheme} />
     </PageLayout>
   );

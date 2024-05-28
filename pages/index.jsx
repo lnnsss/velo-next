@@ -1,6 +1,6 @@
 import { MainPage } from "../components/MainPage/MainPage";
 import { PageLayout } from "../components/PageLayout";
-import { useContext } from 'react';
+import { useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
 
 export default function HomePage() {
@@ -8,7 +8,12 @@ export default function HomePage() {
   const { cartList, setCartList } = useContext(AppContext);
 
   return (
-    <PageLayout currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} cartList={cartList}>
+    <PageLayout
+      title="Velo"
+      currentTheme={currentTheme}
+      setCurrentTheme={setCurrentTheme}
+      cartList={cartList}
+    >
       <MainPage currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} />
     </PageLayout>
   );

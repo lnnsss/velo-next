@@ -4,7 +4,8 @@ import { AppContext } from "../../../contexts/AppContext";
 
 export function BuyFooter() {
   const { cartList, setCartList } = useContext(AppContext);
-  let itogoPriceCounter = cartList.reduce((acc, current) => acc + current.price, 0);
+  let itogoPriceCounter = cartList.reduce((acc, current) =>  Number(acc) + Number(current.price), 0);
+
   return (
     <div className={`${s.buyFooter} ${s._container}`}>
       <div className={s.buyFooter_left}>

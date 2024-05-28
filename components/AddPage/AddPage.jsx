@@ -29,6 +29,20 @@ export function AddPage({ currentTheme, tovarList, setTovarList }) {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const newTovar = { ...formData };
+
+    // Валидация пустых полей и цены
+    let hasEmptyProperties = Object.values(newTovar).some(
+      (value) => value === ""
+    );
+    let wrongPrice = newTovar.price < 10 || newTovar.price > 50;
+    if (hasEmptyProperties) {
+      alert("Все поля  должны быть заполнены!")
+      return;
+    } else if (wrongPrice) {
+      alert("Недопустимая цена!")
+      return;
+    }
+
     setTovarList((tovarList) => [...tovarList, newTovar]);
     setFormData({ ...emptyFormData });
     console.log(newTovar);

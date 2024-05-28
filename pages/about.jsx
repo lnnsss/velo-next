@@ -8,7 +8,7 @@ export default function About() {
   const { cartList, setCartList } = useContext(AppContext);
 
   return (
-    <PageLayout currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} cartList={cartList}>
+    <PageLayout title="О нас" currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} cartList={cartList}>
       <AboutPage currentTheme={currentTheme} />
     </PageLayout>
   );

@@ -9,7 +9,7 @@ export default function Add() {
   const { cartList, setCartList } = useContext(AppContext);
 
   return (
-    <PageLayout currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} cartList={cartList}>
+    <PageLayout title="Добавить релиз" currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} cartList={cartList}>
       <AddPage
         currentTheme={currentTheme}
         tovarList={tovarList}
