@@ -42,10 +42,11 @@
   border-radius: 20px;
   padding: 15px;
   margin: 0 auto;
+  transition: 0.5s;
 }
 .review:hover {
-  border: 1px solid var(--red);
   transition: 0.5s;
+  border: 1px solid var(--red);
 }
 .review_image {
   user-select: none;
@@ -80,7 +81,7 @@
     padding: 40px 0 0 0;
   }
   .review {
-    height: 300px;
+    height: 360px;
     width: 400px;
   }
   .review_image {
@@ -94,6 +95,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .rewPage {
+    padding: 70px 0 40px 0;
+  }
+}
+
 @media (max-width: 375px) {
   .review {
     width: 283px;
@@ -104,4 +111,14 @@
 .nightTheme {
   color: var(--white);
   background-color: var(--secondBlack);
+}
+
+/*----nightTheme--reviews-------------------------------*/
+.nightTheme .review_autor {
+  transition: 0.5s;
+  color: var(--white);
+}
+.nightTheme .review_message {
+  transition: 0.5s;
+  color: var(--grey);
 }

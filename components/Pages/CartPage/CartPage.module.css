@@ -13,9 +13,9 @@
   flex-direction: column;
 }
 ._container {
-    max-width: var(--maxWidth);
-    margin: 0px auto;
-    padding: 0px 15px;
+  max-width: var(--maxWidth);
+  margin: 0px auto;
+  padding: 0px 15px;
 }
 .tittle {
   font-size: 32px;
@@ -66,7 +66,8 @@
   width: 120px;
   height: 120px;
 }
-.korzina_tovar_title, .korzina_tovar_price {
+.korzina_tovar_title,
+.korzina_tovar_price {
   font-size: 24px;
   font-weight: 700;
   width: 20%;
@@ -74,7 +75,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.korzina_tovar_description {
+.korzina_tovar_artist {
   font-size: 18px;
   font-weight: 400;
   color: var(--secondGrey);
@@ -113,7 +114,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 444;    
+  z-index: 444;
   align-items: center;
   transition: 0.5s;
 }
@@ -156,128 +157,135 @@
 }
 .buyFooter_btn:hover {
   filter: brightness(120%);
-  transition: 0.4s;   
+  transition: 0.4s;
 }
 .buyFooter_btn:active {
   filter: brightness(80%);
-  transition: 0.1s;   
+  transition: 0.1s;
 }
 
 /*----media---------------------------------*/
 
 @media (max-width: 1024px) {
-    .korzinaItem {
-        margin: 10px 0;
-        width: 100%;
-        height: 100px;
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        border: 1px solid var(--grey);
-    }
-    .korzina_tovar_image_div {
-        width: 20%;
-        display: flex;
-        justify-content: start;
-    }
-    .korzina_tovar_image {
-        user-select: none;
-        width: 80px;
-        height: 80px;
-    }
-    .korzina_tovar_title, .korzina_tovar_price {
-        font-size: 16px;
-        font-weight: 500;
-        width: 20%;
-    }
-    .korzina_tovar_description {
-        font-size: 12px;
-        font-weight: 300;
-        color: var(--secondGrey);
-        width: 20%;
-        margin: 0 60px 0 80px;
-    }
-    .korzina_tovar_del {
-        font-size: 28px;
-        width: 20%;
-        float: right;
-    }
+  .korzinaItem {
+    margin: 10px 0;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--grey);
+  }
+  .korzina_tovar_image_div {
+    width: 20%;
+    display: flex;
+    justify-content: start;
+  }
+  .korzina_tovar_image {
+    user-select: none;
+    width: 80px;
+    height: 80px;
+  }
+  .korzina_tovar_title,
+  .korzina_tovar_price {
+    font-size: 16px;
+    font-weight: 500;
+    width: 20%;
+  }
+  .korzina_tovar_artist {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--secondGrey);
+    width: 20%;
+    margin: 0 60px 0 80px;
+  }
+  .korzina_tovar_del {
+    font-size: 28px;
+    width: 20%;
+    float: right;
+  }
 }
 
 @media (max-width: 768px) {
-    .korzina_tovar_image_div {
-        width: 25%;
-    }
-    .korzina_tovar_title, .korzina_tovar_price {
-        width: 25%;
-    }
-    .korzina_tovar_description {
-        display: none;
-        width: 25%;
-    }
-    .korzina_tovar_del {
-        width: 25%;
-        margin: 0;
-    }
-    .korzinaCounter.active {
-        top: 5px;
-        left: 125px;
-    }
-    .buyFooter_left {
-        gap: 40px;
-    }
+  .cartPage {
+    padding: 70px 0 40px 0;
+  }
+  .korzina_tovar_image_div {
+    width: 25%;
+  }
+  .korzina_tovar_title,
+  .korzina_tovar_price {
+    width: 25%;
+  }
+  .korzina_tovar_artist {
+    display: none;
+    width: 25%;
+  }
+  .korzina_tovar_del {
+    width: 25%;
+    margin: 0;
+  }
+  .korzinaCounter.active {
+    top: 5px;
+    left: 125px;
+  }
+  .buyFooter_left {
+    gap: 40px;
+  }
 }
 
 @media (max-width: 472px) {
-    .korzina_tovar_image_div {
-        width: 30%;
-    }
-    .korzina_tovar_title, .korzina_tovar_price {
-        width: 30%;
-        font-size: 14px;
-    }
-    .korzina_tovar_description {
-        display: none;
-        width: 30%;
-    }
-    .korzina_tovar_del {
-        width: 10%;
-        margin: 0;
-    }
-    .korzinaCounter.active {
-        right: 20%;
-    }
-    .buyFooter {
-        height: 80px;
-    }
-    .buyFooter_left {
-        gap: 20px;
-    }
-    .itogo, .itogoPrice {
-        font-size: 18px;
-    }
-    .buyFooter_btn {
-        height: 40px;
-        font-size: 16px;
-        font-weight: 500;
-    }
+  .korzina_tovar_image_div {
+    width: 30%;
+  }
+  .korzina_tovar_title,
+  .korzina_tovar_price {
+    width: 30%;
+    font-size: 14px;
+  }
+  .korzina_tovar_artist {
+    display: none;
+    width: 30%;
+  }
+  .korzina_tovar_del {
+    width: 10%;
+    margin: 0;
+  }
+  .korzinaCounter.active {
+    right: 20%;
+  }
+  .buyFooter {
+    height: 80px;
+  }
+  .buyFooter_left {
+    gap: 20px;
+  }
+  .itogo,
+  .itogoPrice {
+    font-size: 18px;
+  }
+  .buyFooter_btn {
+    height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+  }
 }
 
 /*----nightTheme---------------------------------*/
 .nightTheme {
-    color: var(--white);
-    background-color: var(--secondBlack);
+  color: var(--white);
+  background-color: var(--secondBlack);
 }
 
 /*----nightTheme--korzina-------------------------------*/
 .nightTheme .buyFooter {
-    background-color: var(--secondBlack);
-    border: 1px solid var(--grey);
-    border-bottom: none;
+  background-color: var(--secondBlack);
+  border: 1px solid var(--grey);
+  border-bottom: none;
 }
 .nightTheme .buyFooter_btn {
-    background-color: var(--red);
+  background-color: var(--red);
 }
 .nightTheme .itogoPrice {
-    color: var(--white);
+  color: var(--white);
 }

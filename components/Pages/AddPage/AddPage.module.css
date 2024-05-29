@@ -13,8 +13,8 @@
   flex-direction: column;
 }
 .tittle {
-    font-size: 32px;
-    font-weight: 500;
+  font-size: 32px;
+  font-weight: 500;
 }
 .addPage {
   padding: 100px 0 40px 0;
@@ -83,44 +83,47 @@
 /*----media---------------------------------*/
 
 @media (max-width: 768px) {
-    .addForm {
-        width: 360px;
-    }
+  .addPage {
+    padding: 70px 0 40px 0;
+  }
+  .addForm {
+    width: 360px;
+  }
 }
 
 @media (max-width: 472px) {
-    .addForm {
-        margin: 40px auto 0 auto;
-        width: 280px;
-        height: 460px;
-        border: 2px solid var(--grey);
-        border-radius: 20px;
-    }
+  .addForm {
+    margin: 40px auto 0 auto;
+    width: 280px;
+    height: 460px;
+    border: 2px solid var(--grey);
+    border-radius: 20px;
+  }
 }
 
 /*----nightTheme---------------------------------*/
 .nightTheme {
-    color: var(--white);
-    background-color: var(--secondBlack);
+  color: var(--white);
+  background-color: var(--secondBlack);
 }
 
 /*----nightTheme--add-------------------------------*/
 .nightTheme .addNewAlbumBtn {
-    border: 2px solid var(--red);
-    color: var(--red);
+  border: 2px solid var(--red);
+  color: var(--red);
 }
 .nightTheme .addNewAlbumBtn:hover {
-    background-color: var(--red);
-    color: var(--white);
-    width: 80%;
+  background-color: var(--red);
+  color: var(--white);
+  width: 80%;
 }
 
 /*----nightTheme--inputs-------------------------------*/
 .nightTheme input:-webkit-autofill,
 .nightTheme input:-webkit-autofill:hover,
 .nightTheme input:-webkit-autofill:focus {
-    border: 1px solid inherit;
-    -webkit-text-fill-color: var(--white);
-    -webkit-box-shadow: 0 0 0px 1000px inherit inset;
-    transition: background-color 5000s ease-in-out 0s;
+  border: 1px solid inherit;
+  -webkit-text-fill-color: var(--white);
+  -webkit-box-shadow: 0 0 0px 1000px inherit inset;
+  transition: background-color 5000s ease-in-out 0s;
 }

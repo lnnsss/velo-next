@@ -3,7 +3,7 @@ import s from "./../ReviewsPage.module.css";
 
 export function Review({ review }) {
   return (
-    <div className={`${s.swiper_slide} ${s.review}`} id="review_${i}">
+    <div className={s.review} id="review_${i}">
       <Image
         src={review.img}
         alt="slide-1"

@@ -11,7 +11,6 @@ export function TovarCard(item) {
     let tovarId = Number(e.target.id.slice(4));
     let newItem = tovarList.find((el) => el.id === tovarId);
     setCartList(cartList.concat([newItem]));
-    console.log(cartList);
   };
 
   return (
@@ -21,14 +20,14 @@ export function TovarCard(item) {
       key={item.item.id}
     >
       <Image
-        src={item.item.img}
+        src={item.item.img.cover}
         alt={item.item.title}
         className={s.tovar_image}
         width={240}
         height={240}
       />
       <h4 className={s.tovar_title}>{item.item.title}</h4>
-      <span className={s.tovar_description}>{item.item.description}</span>
+      <span className={s.tovar_artist}>{item.item.artist}</span>
       <span className={s.tovar_price}>{item.item.price}$</span>
       <button
         className={s.tovar_btn}

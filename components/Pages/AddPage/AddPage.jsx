@@ -6,12 +6,14 @@ export function AddPage({ currentTheme, tovarList, setTovarList }) {
     id: "",
     img: "",
     title: "",
+    artist: "",
     description: "",
     price: "",
     lang: "Ru",
   };
   const [formData, setFormData] = useState({
     title: "",
+    artist: "",
     description: "",
     price: "",
     lang: "Ru",
@@ -45,8 +47,7 @@ export function AddPage({ currentTheme, tovarList, setTovarList }) {
 
     setTovarList((tovarList) => [...tovarList, newTovar]);
     setFormData({ ...emptyFormData });
-    console.log(newTovar);
-    console.log(tovarList);
+    alert("Релиз добавлен в каталог!")
   };
 
   return (
@@ -68,16 +69,16 @@ export function AddPage({ currentTheme, tovarList, setTovarList }) {
                 value={formData.title}
                 onChange={handleInputChange}
               />
-              <label htmlFor="description" className={s.addFormLabel}>
+              <label htmlFor="artist" className={s.addFormLabel}>
                 Артист
               </label>
               <input
                 type="text"
-                id="description"
-                name="description"
+                id="artist"
+                name="artist"
                 className={s.addFormInput}
                 placeholder="SALUKI"
-                value={formData.description}
+                value={formData.artist}
                 onChange={handleInputChange}
               />
               <label htmlFor="price" className={s.addFormLabel}>

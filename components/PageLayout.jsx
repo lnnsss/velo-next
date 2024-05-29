@@ -16,7 +16,7 @@ export function PageLayout({
   }, [title]);
 
   return (
-    <div className={clsx("bg-white min-h-screen")}>
+    <div className={clsx("min-h-screen")}>
       <Header
         currentTheme={currentTheme}
         setCurrentTheme={setCurrentTheme}

@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import s from "./../ReviewsPage.module.css";
 
 // Пагинация для слайдера
-// При использовании - переименовать компоненту Slider на StyledSlider
+// При использовании - переименовать компоненту Slider на StyledSlider & установить значение  true для dots
 //import styled from "styled-components";
 // const StyledSlider = styled(Slider)`
 //   .slick-dots {
@@ -15,9 +15,10 @@ import s from "./../ReviewsPage.module.css";
 //   }
 // `;
 
-export function SimpleCarousel({ children }) {
+export function Carousel({ children }) {
   const settings = {
-    dots: true,
+    arrows: false,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -28,8 +29,6 @@ export function SimpleCarousel({ children }) {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          infinite: true,
-          dots: true,
         },
       },
       {

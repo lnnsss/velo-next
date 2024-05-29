@@ -14,7 +14,7 @@ export function CartItem(item) {
     <div className={s.korzinaItem} key={item.item.id}>
       <div className={s.korzina_tovar_image_div}>
         <Image
-          src={item.item.img}
+          src={item.item.img.cover}
           alt="tovar"
           className={s.korzina_tovar_image}
           width={120}
@@ -22,7 +22,7 @@ export function CartItem(item) {
         />
       </div>
       <h3 className={s.korzina_tovar_title}>{item.item.title}</h3>
-      <h4 className={s.korzina_tovar_description}>{item.item.description}</h4>
+      <h4 className={s.korzina_tovar_artist}>{item.item.artist}</h4>
       <h4 className={s.korzina_tovar_price}>{item.item.price}$</h4>
       <button
         className={s.korzina_tovar_del}

@@ -1,7 +1,7 @@
 import s from "./ReviewsPage.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { SimpleCarousel } from "./miniComponents/SimpleCarousel";
+import { Carousel } from "./miniComponents/Carousel";
 import { Review } from "./miniComponents/Review";
 
 export function ReviewsPage({ currentTheme }) {
@@ -53,7 +53,7 @@ export function ReviewsPage({ currentTheme }) {
       <div className={s.pa1}>
         <div className={s.pa1_container}>
           <h2 className={`${s.tittle} ${s.leftTxt}`}>Отзывы</h2>
-          <SimpleCarousel>{displayReviews}</SimpleCarousel>
+          <Carousel>{displayReviews}</Carousel>
         </div>
       </div>
     </div>
