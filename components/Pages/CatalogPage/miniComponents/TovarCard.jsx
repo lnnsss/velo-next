@@ -1,7 +1,7 @@
 import Image from "next/image";
 import s from "./../CatalogPage.module.css";
 import { useContext } from "react";
-import { AppContext } from "../../../contexts/AppContext";
+import { AppContext } from "../../../../contexts/AppContext";
 
 export function TovarCard(item) {
   const { tovarList, setTovarList } = useContext(AppContext);

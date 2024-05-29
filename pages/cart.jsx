@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
-import { CartPage } from "../components/CartPage/CartPage";
+import { CartPage } from "../components/Pages/CartPage/CartPage";
 import { PageLayout } from "../components/PageLayout";
 
 export default function Cart() {

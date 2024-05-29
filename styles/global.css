@@ -46,11 +46,11 @@ html::-webkit-scrollbar {
 }
 body {
     height: 100%;
+    position: relative;
     font-family: var(--mainFont);
     font-size: 14px;
     font-weight: normal;
     color: var(--black);
-    position: relative;
     transition: 0.5s;
 }
 .main {

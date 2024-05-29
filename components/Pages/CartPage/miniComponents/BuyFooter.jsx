@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import s from "./../CartPage.module.css";
-import { AppContext } from "../../../contexts/AppContext";
+import { AppContext } from "../../../../contexts/AppContext";
 
 export function BuyFooter() {
   const { cartList, setCartList } = useContext(AppContext);

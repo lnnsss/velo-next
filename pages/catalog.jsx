@@ -1,4 +1,4 @@
-import { CatalogPage } from "../components/CatalogPage/CatalogPage";
+import { CatalogPage } from "../components/Pages/CatalogPage/CatalogPage";
 import { PageLayout } from "../components/PageLayout";
 import { useContext } from "react";
 import { AppContext } from "../contexts/AppContext";

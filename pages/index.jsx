@@ -1,4 +1,4 @@
-import { MainPage } from "../components/MainPage/MainPage";
+import { MainPage } from "../components/Pages/MainPage/MainPage";
 import { PageLayout } from "../components/PageLayout";
 import { useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
@@ -14,7 +14,7 @@ export default function HomePage() {
       setCurrentTheme={setCurrentTheme}
       cartList={cartList}
     >
-      <MainPage currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} />
+      <MainPage currentTheme={currentTheme} />
     </PageLayout>
   );
 }

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
-import { AboutPage } from "../components/AboutPage/AboutPage";
+import { AboutPage } from "../components/Pages/AboutPage/AboutPage";
 import { PageLayout } from "../components/PageLayout";
 
 export default function About() {

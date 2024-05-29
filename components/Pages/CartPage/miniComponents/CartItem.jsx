@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import s from "./../CartPage.module.css";
 import Image from "next/image";
-import { AppContext } from "../../../contexts/AppContext";
+import { AppContext } from "../../../../contexts/AppContext";
 
 export function CartItem(item) {
   const { cartList, setCartList } = useContext(AppContext);
