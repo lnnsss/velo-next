@@ -688,6 +688,7 @@ export const AppProvider = ({ children }) => {
     },
   ]);
   const [cartList, setCartList] = useState([]);
+  const [cartCounter, setCartCounter] = useState(cartList.reduce((acc, obj) => acc + obj.count, 0));
 
   return (
     <AppContext.Provider
@@ -700,6 +701,7 @@ export const AppProvider = ({ children }) => {
         setTovarList,
         cartList,
         setCartList,
+        cartCounter,
       }}
     >
       {children}

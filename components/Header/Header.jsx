@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Image from "next/image";
 import s from "./Header.module.css";
 import Link from "next/link";
 
 import dayTheme from "./images/dayIcon.png";
 import nightTheme from "./images/nightIcon.png";
+import { AppContext } from "../../contexts/AppContext";
 
 export function Header({ currentTheme, setCurrentTheme, cartList }) {
   const [burgerActive, setBurgerActive] = useState(false);
+  const [cartCounter, setCartCounter] = useContext(AppContext);
 
   return (
     <header className={s.header}>
@@ -32,7 +34,11 @@ export function Header({ currentTheme, setCurrentTheme, cartList }) {
               <li>
                 <Link href="/cart" className={s.header_link}>
                   Корзина
-                  {cartList.length ? <div className={s.korzinaCounter}>{cartList.length}</div> : ''}
+                  {cartList.length ? (
+                    <div className={s.korzinaCounter}>{cartCounter}</div>
+                  ) : (
+                    ""
+                  )}
                 </Link>
               </li>
               <li>

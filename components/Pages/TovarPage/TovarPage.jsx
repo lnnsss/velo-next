@@ -5,10 +5,33 @@ import { AppContext } from "../../../contexts/AppContext";
 
 export function TovarPage({ currentTheme, tovar }) {
   const { cartList, setCartList } = useContext(AppContext);
+  const { tovarList, setTovarList } = useContext(AppContext);
 
-  const handleAddToCart = () => {
-    let newTovar = {...tovar};
-    setCartList(cartList.concat([newTovar]));
+  const handleAddToCart = (e) => {
+    let tovarId = Number(e.target.id.slice(4));
+    let newItem = tovarList.find((el) => el.id === tovarId);
+    console.log(newItem);
+    let newCartItem = {
+      id: newItem.id,
+      img: newItem.img.cover,
+      title: newItem.title,
+      artist: newItem.artist,
+      price: newItem.price,
+      count: 1,
+      totalPrice: newItem.price * 1,
+    };
+    let existingCartItem = cartList.find((el) => el.id === newCartItem.id);
+
+    if (existingCartItem) {
+      // Update the count of the existing item
+      existingCartItem.count++;
+      existingCartItem.totalPrice =
+        existingCartItem.price * existingCartItem.count;
+    } else {
+      // Add the new item to the cart
+      setCartList([...cartList, newCartItem]);
+    }
+    console.log(cartList);
   };
 
   return (
@@ -33,6 +56,7 @@ export function TovarPage({ currentTheme, tovar }) {
               <h2 className={s.tovar_header_artist}>{tovar.artist}</h2>
               <h2 className={s.tovar_header_date}>{tovar.date}</h2>
               <button
+                id={`btn_${tovar.id}`}
                 className={s.tovar_header_button}
                 onClick={handleAddToCart}
               >
