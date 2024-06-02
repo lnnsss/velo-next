@@ -11,7 +11,7 @@ export function CartItem(item) {
   };
 
   return (
-    <div className={s.korzinaItem} key={item.item.id}>
+    <div className={s.korzinaItem}>
       <div className={s.korzina_tovar_image_div}>
         <Image
           src={item.item.img.cover}

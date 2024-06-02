@@ -4,17 +4,14 @@ import s from "./AddPage.module.css";
 export function AddPage({ currentTheme, tovarList, setTovarList }) {
   const emptyFormData = {
     id: "",
-    img: "",
     title: "",
     artist: "",
-    description: "",
     price: "",
     lang: "Ru",
   };
   const [formData, setFormData] = useState({
     title: "",
     artist: "",
-    description: "",
     price: "",
     lang: "Ru",
   });

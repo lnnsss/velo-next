@@ -8,7 +8,7 @@ export function TovarCard(item) {
   const { tovarList, setTovarList } = useContext(AppContext);
   const { cartList, setCartList } = useContext(AppContext);
 
-  const handleAddToCard = (e) => {
+  const handleAddToCart = (e) => {
     let tovarId = Number(e.target.id.slice(4));
     let newItem = tovarList.find((el) => el.id === tovarId);
     setCartList(cartList.concat([newItem]));
@@ -34,7 +34,7 @@ export function TovarCard(item) {
         <button
           className={s.tovar_btn}
           id={`btn_${item.item.id}`}
-          onClick={handleAddToCard}
+          onClick={handleAddToCart}
         >
           В корзину
         </button>
