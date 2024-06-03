@@ -1,12 +1,16 @@
 import s from "./../TovarPage.module.css";
 
 export function Tracklist({ tovar }) {
-  
   // Треклист товара
   const thisTracklist = tovar.trackList;
   const displayTracks = thisTracklist.map((el) => <Track title={el} />);
 
-  return <div className={s.tracklist}>{displayTracks}</div>;
+  return (
+    <div className={s.tracklist}>
+      {displayTracks}
+      <div className={s.emptyTrack} />
+    </div>
+  );
 }
 
 function Track({ title }) {

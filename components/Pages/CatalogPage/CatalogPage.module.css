@@ -103,7 +103,7 @@
   white-space: nowrap;
 }
 .tovar_artist {
-  margin: 10px 0 0 0;
+  margin: 5px 0 0 0;
   font-size: 14px;
   color: var(--grey);
   overflow: hidden;
@@ -111,7 +111,7 @@
   white-space: nowrap;
 }
 .tovar_price {
-  margin: 10px 0 10px 0;
+  margin: 10px 0 20px 0;
   font-size: 18px;
 }
 .tovar_btn {

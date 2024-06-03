@@ -1,14 +1,13 @@
 import { useContext, useEffect, useState } from "react";
-import Image from "next/image";
-import s from "./Header.module.css";
-import Link from "next/link";
-
-import dayTheme from "./images/dayIcon.png";
-import nightTheme from "./images/nightIcon.png";
 import { AppContext } from "../../contexts/AppContext";
+import { HeaderMenu } from "./miniComponents/HeaderMenu";
+import { HeaderBurger } from "./miniComponents/HeaderBurger";
+import { HeaderLogo } from "./miniComponents/HeaderLogo";
+import { HeaderLayout } from "./miniComponents/HeaderLayout";
 
-export function Header({ currentTheme, setCurrentTheme, cartList }) {
+export function Header({ cartList }) {
   const [burgerActive, setBurgerActive] = useState(false);
+  const { currentTheme, setCurrentTheme } = useContext(AppContext);
   const { cartCounter, handleSetCartCounter } = useContext(AppContext);
 
   useEffect(() => {
@@ -16,62 +15,19 @@ export function Header({ currentTheme, setCurrentTheme, cartList }) {
   }, [cartList, cartCounter]);
 
   return (
-    <header className={s.header}>
-      <div className={s.header_container}>
-        <div className={s.header_body}>
-          <Link href="/" className={s.header_logo}>
-            &#9733;-&#9733;
-          </Link>
-          <div
-            className={`${s.header_burger} ${burgerActive && s.active}`}
-            onClick={() => setBurgerActive(!burgerActive)}
-          >
-            <span></span>
-          </div>
-          <nav className={`${s.header_menu} ${burgerActive && s.active}`}>
-            <ul className={s.header_list}>
-              <li>
-                <Link href="/catalog" className={s.header_link}>
-                  Каталог
-                </Link>
-              </li>
-              <li>
-                <Link href="/cart" className={s.header_link}>
-                  Корзина
-                  {cartList.length ? (
-                    <div className={s.korzinaCounter}>{cartCounter}</div>
-                  ) : (
-                    ""
-                  )}
-                </Link>
-              </li>
-              <li>
-                <Link href="/reviews" className={s.header_link}>
-                  Отзывы
-                </Link>
-              </li>
-              <li>
-                <Link href="/add" className={s.header_link}>
-                  Добавить
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className={s.header_link}>
-                  О наc
-                </Link>
-              </li>
-              <li className={s.header_link} id="themeBtn">
-                <Image
-                  src={currentTheme ? nightTheme : dayTheme}
-                  alt="theme"
-                  className={s.header_themeImg}
-                  onClick={() => setCurrentTheme(!currentTheme)}
-                />
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <HeaderLayout>
+      <HeaderLogo />
+      <HeaderBurger
+        burgerActive={burgerActive}
+        setBurgerActive={setBurgerActive}
+      />
+      <HeaderMenu
+        burgerActive={burgerActive}
+        cartList={cartList}
+        currentTheme={currentTheme}
+        setCurrentTheme={setCurrentTheme}
+        cartCounter={cartCounter}
+      />
+    </HeaderLayout>
   );
 }

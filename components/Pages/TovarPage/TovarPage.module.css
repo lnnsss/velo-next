@@ -148,6 +148,13 @@
   border-right: 1px solid var(--grey);
   border-bottom: 1px solid var(--grey);
 }
+.emptyTrack {
+  width: 100%;
+  height: 100%;
+  border-left: 1px solid var(--grey);
+  border-right: 1px solid var(--grey);
+  border-bottom: 1px solid var(--grey);
+}
 .track:hover {
   background-color: var(--secondWhite);
 }
@@ -162,7 +169,6 @@
   flex-direction: column;
   align-items: left;
   gap: 10px;
-  border-left: 1px solid var(--grey);
   border-right: 1px solid var(--grey);
   border-bottom: 1px solid var(--grey);
   text-align: left;
@@ -208,7 +214,7 @@
     padding: 50px 0 40px 0;
   }
   .tovar_header {
-    height: 580px;
+    height: 650px;
   }
   .tovar_header_container {
     max-width: 300px;
@@ -234,13 +240,15 @@
   .otherCovers {
     grid-column: 1 / 2;
   }
-
   .tracklist {
     grid-row: 1 / 2;
   }
-
+  .emptyTrack {
+    border-bottom: none;
+  }
   .description {
     grid-row: 2 / 3;
+    border-left: 1px solid var(--grey);
   }
   .otherCovers {
     grid-row: 3 / 4;

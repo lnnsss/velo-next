@@ -159,7 +159,7 @@ export const AppProvider = ({ children }) => {
         art5: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2Ffcc14e327b801fefc33025ebcddf87d7.1000x1000x1.jpg",
         art6: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2F936e880443ec721a6961605e1a304223.1000x1000x1.jpg",
         art7: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2F5fbc976d3156c338e7e71646ca1eb1a0.1000x1000x1.jpg",
-        ОГНЕЙ:
+        Огней:
           "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2Febdd633c301203b9f43e2208cd7a8b0a.1000x1000x1.png",
         HAHAHA:
           "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2Fd7a7fd750888d92e00a2f3766a963e66.1000x1000x1.png",
