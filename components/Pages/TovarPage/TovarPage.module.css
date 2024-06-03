@@ -26,6 +26,7 @@
 .grid_container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
 }
 
 /*----tovarHeader---------------------------------*/
@@ -36,6 +37,7 @@
   display: flex;
   align-items: center;
   position: relative;
+  border-bottom: 1px solid var(--secondGrey);
 }
 .tovar_header_container {
   position: absolute;
@@ -90,27 +92,46 @@
 .tovar_header_button {
   user-select: none;
   width: 160px;
-  margin: auto 0 10px 0;
   padding: 10px 0;
   border: 1px solid var(--white);
   border-radius: 10px;
   transition: 0.5s;
   font-size: 16px;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.tovar_header_button:hover {
+.buyButton {
+  margin: auto 0 10px 0;
+}
+.buyButton:hover {
   color: var(--red);
   border: 1px solid var(--red);
 }
-.tovar_header_button:active {
+.buyButton:active {
   transition: 0.2s;
   background-color: var(--secondRed);
+  color: var(--white);
+}
+.yaButton {
+  margin: 0 0 10px 0;
+}
+.yaButton:hover {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+.yaButton:active {
+  transition: 0.2s;
+  background-color: var(--secondYellow);
   color: var(--white);
 }
 
 /*----tracklist---------------------------------*/
 
 .tracklist {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -133,7 +154,9 @@
 
 /*----about---------------------------------*/
 
-.about {
+.description {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
   padding: 10px 20px 20px 20px;
   display: flex;
   flex-direction: column;
@@ -144,16 +167,38 @@
   border-bottom: 1px solid var(--grey);
   text-align: left;
 }
-.about_container {
+.description_container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
-.about_container p {
+.description_container p {
   width: 100%;
   font-size: 16px;
   text-align: justify;
+}
+
+/*----otherCovers---------------------------------*/
+
+.otherCovers {
+  padding: 20px 0 0 0;
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+  gap: 10px;
+}
+.otherCovers_container {
+  display: flex;
+  align-items: center;
+  gap: 27.5px;
+  flex-wrap: wrap;
+}
+.otherCover {
+  border: 1px solid var(--grey);
 }
 
 /*----media---------------------------------*/
@@ -179,4 +224,46 @@
   .tovar_header_container {
     flex-direction: column;
   }
+  .grid_container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .tracklist,
+  .description,
+  .otherCovers {
+    grid-column: 1 / 2;
+  }
+
+  .tracklist {
+    grid-row: 1 / 2;
+  }
+
+  .description {
+    grid-row: 2 / 3;
+  }
+  .otherCovers {
+    grid-row: 3 / 4;
+    align-items: center;
+  }
+  .otherCovers_container {
+    flex-direction: column;
+  }
+}
+
+/*----nightTheme---------------------------------*/
+.nightTheme {
+  color: var(--white);
+  background-color: var(--secondBlack);
+}
+
+/*----nightTheme--tovar-------------------------------*/
+.nightTheme .tracklist > :nth-child(2n + 1) {
+  background-color: var(--fourthBlack);
+}
+.nightTheme .track:hover {
+  background-color: var(--thirdBlack);
+}
+.nightTheme .itogoPrice {
+  color: var(--white);
 }

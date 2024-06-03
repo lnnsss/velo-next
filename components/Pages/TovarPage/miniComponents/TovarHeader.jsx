@@ -23,13 +23,26 @@ export function TovarHeader({ tovar, handleAddToCart }) {
           <h2 className={s.tovar_header_date}>{tovar.date}</h2>
           <button
             id={`btn_${tovar.id}`}
-            className={s.tovar_header_button}
+            className={`${s.tovar_header_button} ${s.buyButton}`}
             onClick={handleAddToCart}
           >
             {tovar.price}$
           </button>
+          {tovar.yandex && <YandexBtn src={tovar.yandex} />}
         </div>
       </div>
     </div>
+  );
+}
+
+function YandexBtn({ src }) {
+  return (
+    <a
+      className={`${s.tovar_header_button} ${s.yaButton}`}
+      href={src}
+      target="_blank"
+    >
+      Слушать
+    </a>
   );
 }

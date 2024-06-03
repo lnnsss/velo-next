@@ -3,7 +3,8 @@ import { useContext } from "react";
 import { AppContext } from "../../../contexts/AppContext";
 import { TovarHeader } from "./miniComponents/TovarHeader";
 import { Tracklist } from "./miniComponents/Tracklist";
-import { About } from "./miniComponents/About";
+import { Description } from "./miniComponents/Description";
+import { OtherCovers } from "./miniComponents/otherCovers";
 
 export function TovarPage({ currentTheme, tovar }) {
   const { cartList, setCartList } = useContext(AppContext);
@@ -44,7 +45,8 @@ export function TovarPage({ currentTheme, tovar }) {
         <TovarHeader tovar={tovar} handleAddToCart={handleAddToCart} />
         <div className={`${s.pa1_container} ${s.grid_container}`}>
           <Tracklist tovar={tovar} />
-          <About tovar={tovar} />
+          <Description tovar={tovar} />
+          <OtherCovers tovar={tovar} />
         </div>
       </div>
     </div>

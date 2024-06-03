@@ -36,6 +36,7 @@ export const AppProvider = ({ children }) => {
         "Новую работу Миши можно рассматривать как последнюю часть его тетралогии.В нем Драгхилл делает последние штрихи над своим стилем звучания.Сама подача уже стандартная для Михаила и тянется еще с All Babies Fly, но он каждый раз меняет вид этой подачи. Драгхилл подстраивается под каждый инструментал и где надо он будет протягивать гласные, там где надо он даст больше экспрессии, где надо он сделает пробежку по биту, то есть он делает свои треки живыми для восприятия.",
         "Он каждый раз находит разные грани и демонстрирует их слушателю, то это именно то что называется “фирменный звук”",
       ],
+      yandex: "https://music.yandex.ru/album/27652126",
     },
     {
       id: 2,
@@ -70,6 +71,7 @@ export const AppProvider = ({ children }) => {
         "Артист, тесно связанный с объединением MELON MUSIC, выпустил свой второй проект. LOVV66 укрепляет успех альбома «PUZZLES», с помощью релиза «ФИЗИКАЛ ПЭЙН».",
         "Рэпер развивает стилистику хитового сингла «50к в сумке у папы», вдохновлённого музыкой одного из главных трэп-трендсеттеров Playboi Carti.",
       ],
+      yandex: "https://music.yandex.ru/album/15813534",
     },
     {
       id: 3,
@@ -134,6 +136,7 @@ export const AppProvider = ({ children }) => {
         "This is Kendrick’s first full-length project since 2015’s To Pimp A Butterfly. In between the albums, Kendrick released the 8-track EP untitled unmastered.",
         "On February 27, 2016, Mike WiLL Made-It teased that he was in the studio with Kendrick on Instagram. A collaboration was reinforced when a HipHopDX staff member stated that a song titled “DNA” produced by Mike WiLL Made-It would appear on the album.",
       ],
+      yandex: "https://music.yandex.ru/album/4294416",
     },
     {
       id: 4,
@@ -198,6 +201,7 @@ export const AppProvider = ({ children }) => {
         "Кроме того, с 2020 музыкант начал показывать отрывки композиций на разных площадках: В Инстаграме и телеграм-канале STUDIO 21.",
         "Вдобавок Арсений сообщил, что дата выхода альбома переносится на 2021 год.",
       ],
+      yandex: "https://music.yandex.ru/album/25511786",
     },
     {
       id: 5,
@@ -240,6 +244,7 @@ export const AppProvider = ({ children }) => {
         "With Life of a DON, the Houston rapper intends to explain his personal life and let his fans see listen to him for the first time not as Don Toliver, but as Caleb, as he stated via Instagram, 'My life your life.'",
         "Don Toliver released the first official single 'What You Need' on May 4, 2021, which charted at #82 for a week on the Billboard Hot 100. On June 18, 2021, he dropped the second single 'Drugs N Hella Melodies,' featuring Colombian-American singer Kali Uchis.",
       ],
+      yandex: "https://music.yandex.ru/album/18615853",
     },
     {
       id: 6,
@@ -283,6 +288,7 @@ export const AppProvider = ({ children }) => {
         "Ещё в 2021 году в своей сторис в Инстаграм Уланс сделал заявление, что хочет один миллион фунтов за свой новый микстейп, отметив лейблы Warner Music Russia, Sony Music Russia и Black Star.",
         "После долгого затишья и пары выпущенных синглов, никакой информации об альбоме не появлялось на протяжении года. Зимой 2022-го Кристал выложил три поста в своём Телеграм-канале, после чего почти сразу их удалил.",
       ],
+      yandex: "https://music.yandex.ru/album/28464612",
     },
     {
       id: 7,
@@ -326,6 +332,7 @@ export const AppProvider = ({ children }) => {
         "11 августа выходит второй до альбомный сингл 'Сердце для шалав', и уже точная дата релиза альбома 13 августа 2021 года.",
         "В дату выхода альбома ВКонтакте, если вы прослушали данный альбом два раза до 20 августа, вам давали уникальный статус Sosa Muzik к вашему имени и фамилии в виде белого сердечка.",
       ],
+      yandex: "https://music.yandex.ru/album/17444119",
     },
     {
       id: 8,
@@ -373,6 +380,7 @@ export const AppProvider = ({ children }) => {
         "On August 27, 2021, the album’s release date was subtlety announced on the ESPN program, SportsCenter. While the program was showcasing baseball highlights, a video clip of someone holding a sign that reads 'CLB September 3' abruptly appears.",
         "Three days later, on August 30, 2021, Drake confirmed on Instagram that the album would be released on that date. He also posted the album's official cover, which consists of twelve pregnant women emojis.",
       ],
+      yandex: "https://music.yandex.ru/album/17859702",
     },
     {
       id: 9,
@@ -416,6 +424,7 @@ export const AppProvider = ({ children }) => {
         "5 января Михаил предложил фанатам расшифровать аббревиатуру релиза 'ABF'. Тот кто сможет это сделать, сможет прослушать релиз первым",
         "20 января LILDRUGHILL представил первый тизер альбома",
       ],
+      yandex: "https://music.yandex.ru/album/13619041",
     },
     {
       id: 10,
@@ -444,6 +453,7 @@ export const AppProvider = ({ children }) => {
         "'POLAR NIGHT' - дебютный мини-альбом kondachelo, выпущенный 20 июля 2023 года. Альбом включает в себя 8 треков, включая вышедший ранее сингл 'DEMON'. В работе над альбомом приняли участие продюсеры pank, Dreamprod, aunix и другие. Мастеринг и микширование были выполнены Coubraque.",
         "kondachelo - рэп-исполнитель и продюсер, который дебютировал с синглом 'BUMAG4' в марте 2023 года. Он является участником объединения 'Players Club' и сотрудничает с другими артистами, такими как OBLADAET, LIL KRYSTALLL, Платина.",
       ],
+      yandex: "https://music.yandex.ru/album/26593195",
     },
     {
       id: 11,
@@ -456,7 +466,7 @@ export const AppProvider = ({ children }) => {
         Треклист:
           "https://t2.genius.com/unsafe/900x0/https%3A%2F%2Fimages.genius.com%2F63acb77220860a21400adca8b686861a.1000x1000x1.jpg",
         "HEROES & VILLAINS (Heroes Version)":
-          "HEROES & VILLAINS (Heroes Version)",
+          "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2Fd2c3d1dbd8d01471b3436f1aeac61394.1000x1000x1.jpg",
         "HEROES & VILLAINS (Villains Version)":
           "https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2F7360f3a5b01ea634e10608c6975d61d5.1000x1000x1.jpg",
       },
@@ -552,6 +562,7 @@ export const AppProvider = ({ children }) => {
       description: [
         "17 октября 2022 года, PHARAOH в своём Instagram-аккаунте и группе ВКонтакте заявил, что закончил работу над своим новым альбомом на 99%",
       ],
+      yandex: "https://music.yandex.ru/album/24137654",
     },
     {
       id: 14,
@@ -592,6 +603,7 @@ export const AppProvider = ({ children }) => {
         "Cench officially announced the tape on November 25th with a freestyle, and revealed is set to be 15 tracks long and drop on February 25th, 2022. He also promoted his new collaboration with West London fashion brand Trapstar and hinted the drop of the tape’s second single “Retail Therapy” which dropped on January 6th. The tape’s third single, the more introspective and sombre “Cold Shoulder” was later released January 27th.",
         "Following the latter single, Cench dropped a trailer showing the cover art and a snippet of the 15 cut track list as well as fan-made CD artwork.",
       ],
+      yandex: "https://music.yandex.ru/album/21533258",
     },
     {
       id: 15,
@@ -608,7 +620,7 @@ export const AppProvider = ({ children }) => {
         "Не в тусе":
           "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2F2ddb96aab6a639c0759847ba8ce6cca4.604x604x1.jpg",
         "Kebab Boy":
-          "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2F3d6326afd14274fc3d126316dcb45267.605x605x1.jpg",
+          "https://t2.genius.com/unsafe/340x340/https%3A%2F%2Fimages.genius.com%2Fc69df9205bfcc425ee11e6e317ab7a02.1000x1000x1.png",
         Daleko:
           "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2F3d6326afd14274fc3d126316dcb45267.605x605x1.jpg",
         "Бизнес Вумен":
@@ -641,6 +653,7 @@ export const AppProvider = ({ children }) => {
         "Реальная информация о дате выхода релиза появилась в день выхода трека 'Тесно'. Дата выхода (12 августа) была опубликована самим продюсером. Немногим позже появляется треклист, в котором можно было впервые увидеть состав гостей.",
         "После выхода альбом сумел набрать первый миллион прослушиваний во ВКонтакте за 12 часов, что говорит о лояльности аудитории к подобному эксперименту.",
       ],
+      yandex: "https://music.yandex.ru/album/23211206",
     },
     {
       id: 16,
@@ -692,6 +705,7 @@ export const AppProvider = ({ children }) => {
         "11 августа на PLAYERS SHOW 3 Назар объявил месяц выхода альбома — ноябрь.",
         "28 октября в конце клипа на предальбомный сингл 'BRITNEY' Назар показал финальную дату выхода долгожданного альбома — 10 ноября 2023 года.",
       ],
+      yandex: "https://music.yandex.ru/album/28150967",
     },
   ]);
   const [cartList, setCartList] = useState([]);

@@ -14,6 +14,7 @@
   --black: #000000;
   --secondBlack: #0f000e;
   --thirdBlack: #170016;
+  --fourthBlack: #0d000d;
   --grey: #cecece;
   --secondGrey: #d1d1d1;
   --thirdGrey: #fbfbfb;
@@ -22,6 +23,8 @@
   --red: #ec5579;
   --secondRed: #ec5578c0;
   --green: #4ed330;
+  --yellow: #f0ff23;
+  --secondYellow: #f0ff23b8;
 }
 
 /*----основа---------------------------------*/
