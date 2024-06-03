@@ -26,7 +26,9 @@ export function TovarCard(item) {
     if (existingCartItem) {
       // Update the count of the existing item
       existingCartItem.count++;
-      existingCartItem.totalPrice = existingCartItem.price * existingCartItem.count;
+      existingCartItem.totalPrice =
+        existingCartItem.price * existingCartItem.count;
+      setCartList([...cartList]);
     } else {
       // Add the new item to the cart
       setCartList([...cartList, newCartItem]);
@@ -35,11 +37,14 @@ export function TovarCard(item) {
   };
 
   return (
-    <Link href={`/catalog/${item.item.id}`}>
-      <div
+    <div
+      id={`item_${item.item.id}`}
+      key={item.item.id}
+      className={s.tovar_wrapper}
+    >
+      <Link
+        href={`/catalog/${item.item.id}`}
         className={`${s.tovar} ${item.item.lang}`}
-        id={`item_${item.item.id}`}
-        key={item.item.id}
       >
         <Image
           src={item.item.img.cover}
@@ -51,14 +56,14 @@ export function TovarCard(item) {
         <h4 className={s.tovar_title}>{item.item.title}</h4>
         <span className={s.tovar_artist}>{item.item.artist}</span>
         <span className={s.tovar_price}>{item.item.price}$</span>
-        <button
-          className={s.tovar_btn}
-          id={`btn_${item.item.id}`}
-          onClick={handleAddToCart}
-        >
-          В корзину
-        </button>
-      </div>
-    </Link>
+      </Link>
+      <button
+        className={s.tovar_btn}
+        id={`btn_${item.item.id}`}
+        onClick={handleAddToCart}
+      >
+        В корзину
+      </button>
+    </div>
   );
 }

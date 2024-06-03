@@ -248,9 +248,12 @@
     width: 30%;
   }
   .korzina_tovar_title,
-  .korzina_tovar_price,
   .korzina_tovar_count {
     width: 30%;
+    font-size: 14px;
+  }
+  .korzina_tovar_price {
+    width: 20%;
     font-size: 14px;
   }
   .korzina_tovar_artist {
@@ -258,8 +261,11 @@
     width: 30%;
   }
   .korzina_tovar_btns {
-    width: 10%;
+    width: 20%;
     padding: 0 0 0 0;
+  }
+  .korzina_tovar_fix {
+    font-size: 12px;
   }
   .korzinaCounter.active {
     right: 20%;

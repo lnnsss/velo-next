@@ -440,7 +440,10 @@ export const AppProvider = ({ children }) => {
         "VODOP4D",
         "STAK4N (Bonus)",
       ],
-      description: ["", ""],
+      description: [
+        "'POLAR NIGHT' - дебютный мини-альбом kondachelo, выпущенный 20 июля 2023 года. Альбом включает в себя 8 треков, включая вышедший ранее сингл 'DEMON'. В работе над альбомом приняли участие продюсеры pank, Dreamprod, aunix и другие. Мастеринг и микширование были выполнены Coubraque.",
+        "kondachelo - рэп-исполнитель и продюсер, который дебютировал с синглом 'BUMAG4' в марте 2023 года. Он является участником объединения 'Players Club' и сотрудничает с другими артистами, такими как OBLADAET, LIL KRYSTALLL, Платина.",
+      ],
     },
     {
       id: 11,
@@ -512,7 +515,11 @@ export const AppProvider = ({ children }) => {
       ],
       lang: "En",
       date: "22 Декабря 2022",
-      description: [],
+      description: [
+        "Dina Ayada выпустила расширенное издание своего мини-альбома 'SUPERSTAR!' под названием 'SUPERSTAR! (Deluxe)' . Релиз включает в себя 12 треков, в том числе 4 новые песни, которые дополняют оригинальный трек-лист из 8 композиций.",
+        "Первый трек 'Imagine!' - это песня о воплощении мечты Dina, веселье и избавлении от негативной энергии или мыслей . Второй трек 'Superstar' - заглавная песня мини-альбома, которая вдохновляет слушателей быть уверенными в себе и следовать за своей мечтой.",
+        "Обложка 'SUPERSTAR!' выполнена в ярких розовых тонах и изображает Dina Ayada в образе настоящей суперзвезды. Расширенное издание демонстрирует творческий рост артистки и предлагает поклонникам новые интерпретации полюбившихся песен, а также дополнительные треки для более полного погружения в мир 'SUPERSTAR!'.",
+      ],
     },
     {
       id: 13,
@@ -688,7 +695,10 @@ export const AppProvider = ({ children }) => {
     },
   ]);
   const [cartList, setCartList] = useState([]);
-  const [cartCounter, setCartCounter] = useState(cartList.reduce((acc, obj) => acc + obj.count, 0));
+  const [cartCounter, setCartCounter] = useState(0);
+  const handleSetCartCounter = () => {
+    setCartCounter(cartList.reduce((acc, obj) => acc + obj.count, 0));
+  };
 
   return (
     <AppContext.Provider
@@ -702,6 +712,7 @@ export const AppProvider = ({ children }) => {
         cartList,
         setCartList,
         cartCounter,
+        handleSetCartCounter,
       }}
     >
       {children}

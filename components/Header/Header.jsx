@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import s from "./Header.module.css";
 import Link from "next/link";
@@ -9,7 +9,11 @@ import { AppContext } from "../../contexts/AppContext";
 
 export function Header({ currentTheme, setCurrentTheme, cartList }) {
   const [burgerActive, setBurgerActive] = useState(false);
-  const [cartCounter, setCartCounter] = useContext(AppContext);
+  const { cartCounter, handleSetCartCounter } = useContext(AppContext);
+
+  useEffect(() => {
+    handleSetCartCounter();
+  }, [cartList, cartCounter]);
 
   return (
     <header className={s.header}>

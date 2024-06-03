@@ -1,12 +1,15 @@
-import Image from "next/image";
 import s from "./TovarPage.module.css";
 import { useContext } from "react";
 import { AppContext } from "../../../contexts/AppContext";
+import { TovarHeader } from "./miniComponents/TovarHeader";
+import { Tracklist } from "./miniComponents/Tracklist";
+import { About } from "./miniComponents/About";
 
 export function TovarPage({ currentTheme, tovar }) {
   const { cartList, setCartList } = useContext(AppContext);
-  const { tovarList, setTovarList } = useContext(AppContext);
+  const { tovarList } = useContext(AppContext);
 
+  // Функция для добавления товара в корзину
   const handleAddToCart = (e) => {
     let tovarId = Number(e.target.id.slice(4));
     let newItem = tovarList.find((el) => el.id === tovarId);
@@ -27,6 +30,7 @@ export function TovarPage({ currentTheme, tovar }) {
       existingCartItem.count++;
       existingCartItem.totalPrice =
         existingCartItem.price * existingCartItem.count;
+      setCartList([...cartList]);
     } else {
       // Add the new item to the cart
       setCartList([...cartList, newCartItem]);
@@ -37,38 +41,10 @@ export function TovarPage({ currentTheme, tovar }) {
   return (
     <div className={`${s.tovarPage} ${currentTheme && `${s.nightTheme}`}`}>
       <div className={s.pa1}>
-        <div className={s.tovar_header}>
-          <div
-            className={s.tovar_header_background}
-            style={{
-              backgroundImage: `url(${tovar.img.cover})`,
-            }}
-          ></div>
-          <div className={s.tovar_header_container}>
-            <Image
-              className={s.tovar_cover}
-              src={tovar.img.cover}
-              width={300}
-              height={300}
-            />
-            <div className={s.tovar_header_text}>
-              <h2 className={s.tovar_header_title}>{tovar.title}</h2>
-              <h2 className={s.tovar_header_artist}>{tovar.artist}</h2>
-              <h2 className={s.tovar_header_date}>{tovar.date}</h2>
-              <button
-                id={`btn_${tovar.id}`}
-                className={s.tovar_header_button}
-                onClick={handleAddToCart}
-              >
-                {tovar.price}$
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className={s.pa1_container}>
-          <h2 className={`${s.tittle} ${s.leftTxt}`}>
-            {tovar ? tovar.title : "tovar2"}
-          </h2>
+        <TovarHeader tovar={tovar} handleAddToCart={handleAddToCart} />
+        <div className={`${s.pa1_container} ${s.grid_container}`}>
+          <Tracklist tovar={tovar} />
+          <About tovar={tovar} />
         </div>
       </div>
     </div>
