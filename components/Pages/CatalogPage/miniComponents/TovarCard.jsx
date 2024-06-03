@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { AppContext } from "../../../../contexts/AppContext";
 import Link from "next/link";
 
-export function TovarCard(item) {
+export function TovarCard({ item }) {
   const { tovarList, setTovarList } = useContext(AppContext);
   const { cartList, setCartList } = useContext(AppContext);
 
@@ -23,47 +23,79 @@ export function TovarCard(item) {
     };
     let existingCartItem = cartList.find((el) => el.id === newCartItem.id);
 
+    // Счетчик количества товара в шапке
     if (existingCartItem) {
-      // Update the count of the existing item
       existingCartItem.count++;
       existingCartItem.totalPrice =
         existingCartItem.price * existingCartItem.count;
       setCartList([...cartList]);
     } else {
-      // Add the new item to the cart
       setCartList([...cartList, newCartItem]);
     }
     console.log(cartList);
   };
 
+  // Если релиз был добавлен пользователем, то у него не будет своей страницы
   return (
-    <div
-      id={`item_${item.item.id}`}
-      key={item.item.id}
-      className={s.tovar_wrapper}
-    >
-      <Link
-        href={`/catalog/${item.item.id}`}
-        className={`${s.tovar} ${item.item.lang}`}
-      >
+    <div id={`item_${item.id}`} key={item.id} className={s.tovar_wrapper}>
+      {item.withoutPage ? (
+        <UserTovar item={item} handleAddToCart={handleAddToCart} />
+      ) : (
+        <BaseTovar item={item} handleAddToCart={handleAddToCart} />
+      )}
+    </div>
+  );
+}
+
+function BaseTovar({ item, handleAddToCart }) {
+  return (
+    <>
+      <Link href={`/catalog/${item.id}`} className={`${s.tovar} ${item.lang}`}>
         <Image
-          src={item.item.img.cover}
-          alt={item.item.title}
+          src={item.img.cover}
+          alt={item.title}
           className={s.tovar_image}
           width={240}
           height={240}
         />
-        <h4 className={s.tovar_title}>{item.item.title}</h4>
-        <span className={s.tovar_artist}>{item.item.artist}</span>
-        <span className={s.tovar_price}>{item.item.price}$</span>
+        <h4 className={s.tovar_title}>{item.title}</h4>
+        <span className={s.tovar_artist}>{item.artist}</span>
+        <span className={s.tovar_price}>{item.price}$</span>
       </Link>
       <button
         className={s.tovar_btn}
-        id={`btn_${item.item.id}`}
+        id={`btn_${item.id}`}
         onClick={handleAddToCart}
       >
         В корзину
       </button>
-    </div>
+    </>
+  );
+}
+function UserTovar({ item, handleAddToCart }) {
+  return (
+    <>
+      <div className={`${s.tovar} ${item.lang}`}>
+        <Image
+          src="https://mywebicons.ru/i/jpg/1db25ba3ca78c326db6600d1a1bd36f7.jpg"
+          alt={item.title}
+          className={s.tovar_image}
+          width={240}
+          height={240}
+        />
+        <h4 className={s.tovar_title}>{item.title}</h4>
+        <span className={s.tovar_artist}>{item.artist}</span>
+        <span className={s.tovar_price}>{item.price}$</span>
+      </div>
+      <button
+        className={s.tovar_btn}
+        id={`btn_${item.id}`}
+        onClick={() => {
+          alert("Данного товара не существует.");
+        }}
+      >
+        В корзину
+      </button>
+    </>
   );
 }

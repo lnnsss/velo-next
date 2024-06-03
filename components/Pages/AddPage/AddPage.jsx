@@ -14,6 +14,7 @@ export function AddPage({ currentTheme, tovarList, setTovarList }) {
     artist: "",
     price: "",
     lang: "Ru",
+    withoutPage: true,
   });
 
   const handleInputChange = (e) => {
@@ -22,7 +23,6 @@ export function AddPage({ currentTheme, tovarList, setTovarList }) {
       ...formData,
       [name]: value,
       id: tovarList.length + 1,
-      img: "https://t2.genius.com/unsafe/855x0/https%3A%2F%2Fimages.genius.com%2Fd18baece02319973d160480b9e1380b9.1000x1000x1.jpg",
     });
   };
   const handleFormSubmit = (e) => {
@@ -35,16 +35,17 @@ export function AddPage({ currentTheme, tovarList, setTovarList }) {
     );
     let wrongPrice = newTovar.price < 10 || newTovar.price > 50;
     if (hasEmptyProperties) {
-      alert("Все поля  должны быть заполнены!")
+      alert("Все поля  должны быть заполнены!");
       return;
     } else if (wrongPrice) {
-      alert("Недопустимая цена!")
+      alert("Недопустимая цена!");
       return;
     }
 
     setTovarList((tovarList) => [...tovarList, newTovar]);
     setFormData({ ...emptyFormData });
-    alert("Релиз добавлен в каталог!")
+    alert("Релиз добавлен в каталог!");
+    console.log(tovarList);
   };
 
   return (
