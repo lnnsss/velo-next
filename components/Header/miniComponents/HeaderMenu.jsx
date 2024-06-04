@@ -35,14 +35,22 @@ export function HeaderMenu({
           </Link>
         </li>
         <li>
+          <Link href="/about" className={s.header_link}>
+            О наc
+          </Link>
+        </li>
+        <li>
           <Link href="/add" className={s.header_link}>
             Добавить
           </Link>
         </li>
         <li>
-          <Link href="/about" className={s.header_link}>
-            О наc
-          </Link>
+          <span
+            className={s.header_link}
+            onClick={() => {}}
+          >
+            Аккаунт
+          </span>
         </li>
         <li className={s.header_link} id="themeBtn">
           <Image
