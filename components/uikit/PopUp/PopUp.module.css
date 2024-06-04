@@ -9,7 +9,7 @@
   backdrop-filter: blur(8px);
 }
 .popup {
-  position: absolute;
+  position: fixed;
   z-index: 99;
   top: 300px;
   left: 50%;

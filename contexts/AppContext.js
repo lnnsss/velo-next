@@ -3,8 +3,8 @@ import { createContext, useState } from "react";
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [currentTheme, setCurrentTheme] = useState(true);
-  const [activeFilter, setActiveFilter] = useState("All");
+  const [currentTheme, setCurrentTheme] = useState(false); //  тема: светлая - false; темная - true;
+  const [activeFilter, setActiveFilter] = useState("All"); //  фильтры для перебора товаров в странице catalog
   const [tovarList, setTovarList] = useState([
     {
       id: 1,
@@ -707,12 +707,12 @@ export const AppProvider = ({ children }) => {
       ],
       yandex: "https://music.yandex.ru/album/28150967",
     },
-  ]);
-  const [cartList, setCartList] = useState([]);
-  const [cartCounter, setCartCounter] = useState(0);
+  ]); // массив с обьектами-релизами
+  const [cartList, setCartList] = useState([]); // массив с товарами в корзине
+  const [cartCounter, setCartCounter] = useState(0); // счетчик товаров в корзине
   const handleSetCartCounter = () => {
     setCartCounter(cartList.reduce((acc, obj) => acc + obj.count, 0));
-  };
+  }; // функция для обновления счетчика товаров в корзине
 
   return (
     <AppContext.Provider
