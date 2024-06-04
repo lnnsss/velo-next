@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [currentTheme, setCurrentTheme] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState(true);
   const [activeFilter, setActiveFilter] = useState("All");
   const [tovarList, setTovarList] = useState([
     {

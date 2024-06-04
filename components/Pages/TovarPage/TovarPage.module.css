@@ -139,14 +139,23 @@
 .tracklist > :nth-child(2n + 1) {
   background-color: var(--thirdGrey);
 }
+.trackNumb {
+  font-size: 12px;
+  color: var(--grey);
+  margin-right: 7px;
+}
 .track {
   width: 100%;
-  padding: 10px 0 10px 15px;
+  padding: 10px;
   font-size: 18px;
   text-align-last: left;
   border-left: 1px solid var(--grey);
   border-right: 1px solid var(--grey);
   border-bottom: 1px solid var(--grey);
+  display: flex;
+  align-items: center;
+  white-space: nowrap; 
+  text-overflow: ellipsis; 
 }
 .emptyTrack {
   width: 100%;

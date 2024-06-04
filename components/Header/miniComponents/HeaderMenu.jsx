@@ -47,7 +47,9 @@ export function HeaderMenu({
         <li>
           <span
             className={s.header_link}
-            onClick={() => {}}
+            onClick={() => {
+              handleToReg();
+            }}
           >
             Аккаунт
           </span>

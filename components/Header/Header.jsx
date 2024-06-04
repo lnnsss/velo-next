@@ -5,7 +5,7 @@ import { HeaderBurger } from "./miniComponents/HeaderBurger";
 import { HeaderLogo } from "./miniComponents/HeaderLogo";
 import { HeaderLayout } from "./miniComponents/HeaderLayout";
 
-export function Header({ cartList, handleToReg }) {
+export function Header({ cartList }) {
   const [burgerActive, setBurgerActive] = useState(false);
   const { currentTheme, setCurrentTheme } = useContext(AppContext);
   const { cartCounter, handleSetCartCounter } = useContext(AppContext);
