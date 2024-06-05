@@ -11,7 +11,6 @@ export function HeaderMenu({
   burgerActive,
   cartList,
   cartCounter,
-  popupActive,
 }) {
   const { handleToReg } = usePopupManager();
 
@@ -31,13 +30,7 @@ export function HeaderMenu({
         <HeaderLink href="/about">О наc</HeaderLink>
         <HeaderLink href="/add">Добавить</HeaderLink>
         <li>
-          <span
-            className={s.header_link}
-            onClick={() => {
-              handleToReg();
-              console.log(handleToReg);
-            }}
-          >
+          <span className={s.header_link} onClick={handleToReg}>
             Аккаунт
           </span>
         </li>

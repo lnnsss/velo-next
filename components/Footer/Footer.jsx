@@ -11,26 +11,12 @@ export function Footer() {
     <footer className={s.footer}>
       <div className={s.footer_container}>
         <div className={s.footer_top}>
-          <a className={s.footer_logo}>
-            Velo
-          </a>
+          <a className={s.footer_logo}>Velo</a>
           <div className={s.socials}>
-            <a target="_blank" href="https://github.com/lnnsss">
-              <Image
-                src={gh}
-                alt="github"
-                className={s.soc}
-              />
-            </a>
-            <a target="_blank" href="https://vk.com/l1lines">
-              <Image src={vk} alt="vk" className={s.soc} />
-            </a>
-            <a target="_blank" href="https://www.instagram.com/@l1lines">
-              <Image src={inst} alt="inst" className={s.soc} />
-            </a>
-            <a target="_blank" href="https://t.me/l1lines">
-              <Image src={tg} alt="tg" className={s.soc} />
-            </a>
+            <FooterLink way={gh} href="https://github.com/lnnsss" />
+            <FooterLink way={vk} href="https://vk.com/l1lines" />
+            <FooterLink way={inst} href="https://www.instagram.com/@l1lines" />
+            <FooterLink way={tg} href="https://t.me/l1lines" />
           </div>
         </div>
         <div className={s.footer_bottom}>
@@ -41,5 +27,13 @@ export function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterLink({ way, href }) {
+  return (
+    <a target="_blank" href={href}>
+      <Image src={way} alt={way} className={s.soc} />
+    </a>
   );
 }
