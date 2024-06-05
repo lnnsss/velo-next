@@ -4,7 +4,7 @@ import Image from "next/image";
 export function OtherCovers({ tovar }) {
   // Обложки товара
   const thisCovers = tovar.img;
-  const coversArray = Object.entries(thisCovers);
+  const coversArray = Object.entries(thisCovers).slice(1);
   const displayCovers = coversArray.map(([key, value]) => (
     <Cover key={key} title={key} img={value} />
   ));
