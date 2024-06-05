@@ -17,6 +17,6 @@ export function OtherCovers({ tovar }) {
   );
 }
 
-function Cover({ img, title }) {
-  return <Image className={s.otherCover} src={img} title={title} width={220} height={220} />;
+function Cover({ img, title, key }) {
+  return <Image className={s.otherCover} key={key} src={img} title={title} width={220} height={220} />;
 }

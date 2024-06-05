@@ -3,8 +3,9 @@ import s from "./../TovarPage.module.css";
 export function Tracklist({ tovar }) {
   // Треклист товара
   const thisTracklist = tovar.trackList;
-  const displayTracks = thisTracklist.map((el, i) => (
-    <Track title={el} numb={i+1} />
+  const tracklistArray = Object.entries(thisTracklist);
+  const displayTracks = tracklistArray.map(([key, value], i) => (
+    <Track key={key} title={key} feats={value} numb={i + 1} />
   ));
 
   return (
@@ -15,11 +16,19 @@ export function Tracklist({ tovar }) {
   );
 }
 
-function Track({ title, numb }) {
+function Track({ title, numb, feats, key }) {
+  let featsString = "";
+  if (feats.length) {
+    featsString = feats.join(", ") + ".";
+  }
+
   return (
-    <div className={`${s.track}`}>
+    <div className={`${s.track}`} key={key}>
       <span className={s.trackNumb}>{numb}.</span>
       {title}
+      {feats.length ? (
+        <span className={s.feats}>feat. {featsString}</span>
+      ) : null}
     </div>
   );
 }
