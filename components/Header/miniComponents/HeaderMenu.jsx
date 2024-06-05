@@ -3,6 +3,7 @@ import dayTheme from "./../images/dayIcon.png";
 import nightTheme from "./../images/nightIcon.png";
 import Image from "next/image";
 import Link from "next/link";
+import { usePopupManager } from "../../usePopupManager";
 
 export function HeaderMenu({
   currentTheme,
@@ -10,45 +11,31 @@ export function HeaderMenu({
   burgerActive,
   cartList,
   cartCounter,
+  popupActive,
 }) {
+  const { handleToReg } = usePopupManager();
+
   return (
     <nav className={`${s.header_menu} ${burgerActive && s.active}`}>
       <ul className={s.header_list}>
-        <li>
-          <Link href="/catalog" className={s.header_link}>
-            Каталог
-          </Link>
-        </li>
-        <li>
-          <Link href="/cart" className={s.header_link}>
-            Корзина
-            {cartList.length ? (
-              <div className={s.korzinaCounter}>{cartCounter}</div>
-            ) : (
-              ""
-            )}
-          </Link>
-        </li>
-        <li>
-          <Link href="/reviews" className={s.header_link}>
-            Отзывы
-          </Link>
-        </li>
-        <li>
-          <Link href="/about" className={s.header_link}>
-            О наc
-          </Link>
-        </li>
-        <li>
-          <Link href="/add" className={s.header_link}>
-            Добавить
-          </Link>
-        </li>
+        <HeaderLink href="/catalog">Каталог</HeaderLink>
+        <HeaderLink href="/cart">
+          Корзина
+          {cartList.length ? (
+            <div className={s.korzinaCounter}>{cartCounter}</div>
+          ) : (
+            ""
+          )}
+        </HeaderLink>
+        <HeaderLink href="/reviews">Отзывы</HeaderLink>
+        <HeaderLink href="/about">О наc</HeaderLink>
+        <HeaderLink href="/add">Добавить</HeaderLink>
         <li>
           <span
             className={s.header_link}
             onClick={() => {
               handleToReg();
+              console.log(handleToReg);
             }}
           >
             Аккаунт
@@ -64,5 +51,15 @@ export function HeaderMenu({
         </li>
       </ul>
     </nav>
+  );
+}
+
+function HeaderLink({ href, children }) {
+  return (
+    <li>
+      <Link href={href} className={s.header_link}>
+        {children}
+      </Link>
+    </li>
   );
 }
