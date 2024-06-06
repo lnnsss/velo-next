@@ -154,8 +154,8 @@
   border-bottom: 1px solid var(--grey);
   display: flex;
   align-items: center;
-  white-space: nowrap; 
-  text-overflow: ellipsis; 
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .emptyTrack {
   width: 100%;
@@ -220,6 +220,27 @@
 }
 .otherCover {
   border: 1px solid var(--grey);
+  cursor: pointer;
+  user-select: none;
+}
+.fullScreenBg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 88;
+  width: 100%;
+  height: 100%;
+  background: rgba(42, 42, 42, 0.2);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+.fullScreenCover {
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
 }
 
 /*----media---------------------------------*/
@@ -271,6 +292,10 @@
   }
   .otherCovers_container {
     flex-direction: column;
+  }
+  .fullScreenCover {
+    width: 280px;
+    height: 280px;
   }
 }
 

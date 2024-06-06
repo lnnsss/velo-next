@@ -1,3 +1,4 @@
+import { useState } from "react";
 import s from "./../TovarPage.module.css";
 import Image from "next/image";
 
@@ -18,5 +19,24 @@ export function OtherCovers({ tovar }) {
 }
 
 function Cover({ img, title, key }) {
-  return <Image className={s.otherCover} key={key} src={img} title={title} width={220} height={220} />;
+  const [isFullScreen, setIsFullScreen] = useState(false);
+  const toggleFullScreen = () => {
+    setIsFullScreen(!isFullScreen);
+  };
+
+  return (
+    <div
+      className={isFullScreen ? s.fullScreenBg : ""}
+      onClick={toggleFullScreen}
+    >
+      <Image
+        className={`${s.otherCover} ${isFullScreen ? s.fullScreenCover : ""}`}
+        key={key}
+        src={img}
+        title={isFullScreen ? '' : title}
+        width={isFullScreen ? 520 : 220}
+        height={isFullScreen ? 520 : 220}
+      />
+    </div>
+  );
 }
