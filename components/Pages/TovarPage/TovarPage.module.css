@@ -26,7 +26,7 @@
 .grid_container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 /*----tovarHeader---------------------------------*/
@@ -147,15 +147,18 @@
 .track {
   width: 100%;
   padding: 10px;
-  font-size: 18px;
   text-align-last: left;
   border-left: 1px solid var(--grey);
   border-right: 1px solid var(--grey);
   border-bottom: 1px solid var(--grey);
   display: flex;
   align-items: center;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+}
+.trackTitle {
+  width: 100%;
+  font-size: 18px;
+  flex: wrap;
+  text-align: left;
 }
 .emptyTrack {
   width: 100%;
@@ -252,18 +255,12 @@
   .tovar_header {
     height: 650px;
   }
-  .tovar_header_container {
-    max-width: 300px;
-    flex-direction: column;
-  }
   .tovar_header_text {
     text-align: center;
     align-items: center;
   }
-}
-
-@media (max-width: 472px) {
   .tovar_header_container {
+    max-width: 300px;
     flex-direction: column;
   }
   .grid_container {
@@ -290,6 +287,9 @@
     grid-row: 3 / 4;
     align-items: center;
   }
+}
+
+@media (max-width: 472px) {
   .otherCovers_container {
     flex-direction: column;
   }

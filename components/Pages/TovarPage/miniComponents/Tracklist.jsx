@@ -25,10 +25,12 @@ function Track({ title, numb, feats, key }) {
   return (
     <div className={`${s.track}`} key={key}>
       <span className={s.trackNumb}>{numb}.</span>
-      {title}
-      {feats.length ? (
-        <span className={s.feats}>feat. {featsString}</span>
-      ) : null}
+      <div className={s.trackTitle}>
+        {title}
+        {feats.length ? (
+          <span className={s.feats}>feat. {featsString}</span>
+        ) : null}
+      </div>
     </div>
   );
 }
