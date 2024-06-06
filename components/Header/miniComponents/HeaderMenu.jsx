@@ -3,7 +3,7 @@ import dayTheme from "./../images/dayIcon.png";
 import nightTheme from "./../images/nightIcon.png";
 import Image from "next/image";
 import Link from "next/link";
-import { usePopupManager } from "../../usePopupManager";
+import { usePopupManager } from "../../../hooks/usePopupManager";
 
 export function HeaderMenu({
   currentTheme,
