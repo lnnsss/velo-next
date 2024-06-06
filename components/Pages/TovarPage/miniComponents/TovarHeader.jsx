@@ -1,7 +1,10 @@
+import { useCoverFullScreen } from "../../../../hooks/useCoverFullScreen";
 import s from "./../TovarPage.module.css";
 import Image from "next/image";
 
 export function TovarHeader({ tovar, handleAddToCart }) {
+  const { isFullScreen, toggleFullScreen } = useCoverFullScreen();
+
   return (
     <div className={s.tovar_header}>
       <div
@@ -11,12 +14,19 @@ export function TovarHeader({ tovar, handleAddToCart }) {
         }}
       ></div>
       <div className={s.tovar_header_container}>
-        <Image
-          className={s.tovar_cover}
-          src={tovar.img.cover}
-          width={300}
-          height={300}
-        />
+        <div
+          className={isFullScreen ? s.fullScreenBg : ""}
+          onClick={toggleFullScreen}
+        >
+          <Image
+            className={`${s.tovar_cover} ${
+              isFullScreen ? s.fullScreenCover : ""
+            }`}
+            src={tovar.img.cover}
+            width={isFullScreen ? 520 : 300}
+            height={isFullScreen ? 520 : 300}
+          />
+        </div>
         <div className={s.tovar_header_text}>
           <h2 className={s.tovar_header_title}>{tovar.title}</h2>
           <h2 className={s.tovar_header_artist}>{tovar.artist}</h2>

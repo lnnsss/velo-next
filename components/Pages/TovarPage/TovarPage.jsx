@@ -27,13 +27,11 @@ export function TovarPage({ currentTheme, tovar }) {
     let existingCartItem = cartList.find((el) => el.id === newCartItem.id);
 
     if (existingCartItem) {
-      // Update the count of the existing item
       existingCartItem.count++;
       existingCartItem.totalPrice =
         existingCartItem.price * existingCartItem.count;
       setCartList([...cartList]);
     } else {
-      // Add the new item to the cart
       setCartList([...cartList, newCartItem]);
     }
     console.log(cartList);

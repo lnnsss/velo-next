@@ -22,7 +22,7 @@ export function BuyFooter() {
           className={`${s.buyFooter_btn} ${s.buyBtn}`}
           onClick={handleBuyPopupOpen}
         >
-          Купить
+          Заказать
         </button>
       </div>
     </div>

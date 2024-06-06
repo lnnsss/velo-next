@@ -1,9 +1,10 @@
 .footer {
+    position: relative;
+    z-index: 77;
     margin: 0 0 auto 0;
     height: 70px;
     width: 100%;
     background-color: var(--red);
-    z-index: 65;
 }
 .footer_container {
     max-width: var(--maxWidth);

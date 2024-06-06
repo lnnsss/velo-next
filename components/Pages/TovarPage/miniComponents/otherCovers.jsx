@@ -1,6 +1,6 @@
-import { useState } from "react";
 import s from "./../TovarPage.module.css";
 import Image from "next/image";
+import { useCoverFullScreen } from "../../../../hooks/useCoverFullScreen";
 
 export function OtherCovers({ tovar }) {
   // Обложки товара
@@ -19,10 +19,7 @@ export function OtherCovers({ tovar }) {
 }
 
 function Cover({ img, title, key }) {
-  const [isFullScreen, setIsFullScreen] = useState(false);
-  const toggleFullScreen = () => {
-    setIsFullScreen(!isFullScreen);
-  };
+  const { isFullScreen, toggleFullScreen } = useCoverFullScreen();
 
   return (
     <div
@@ -33,7 +30,7 @@ function Cover({ img, title, key }) {
         className={`${s.otherCover} ${isFullScreen ? s.fullScreenCover : ""}`}
         key={key}
         src={img}
-        title={isFullScreen ? '' : title}
+        title={isFullScreen ? "" : title}
         width={isFullScreen ? 520 : 220}
         height={isFullScreen ? 520 : 220}
       />
