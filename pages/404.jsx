@@ -1,5 +1,5 @@
-import { ErrorPage } from "./../components/ErrorPage/ErrorPage";
+import { NotFoundPage } from "./../components/NotFoundPage/NotFoundPage";
 
-export default function errorPage() {
-  return <ErrorPage />;
+export default function notFound() {
+  return <NotFoundPage />;
 }
