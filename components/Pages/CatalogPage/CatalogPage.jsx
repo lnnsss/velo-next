@@ -1,6 +1,7 @@
-import s from "./CatalogPage.module.css";
-import { TovarCard } from "./miniComponents/TovarCard";
-import { Filter } from "./miniComponents/Filter";
+import { CatalogLayout } from "./miniComponents/CatalogLayout";
+import { CatalogHeader } from "./miniComponents/CatalogHeader";
+import { Tovars } from "./miniComponents/Tovars";
+import { useState } from "react";
 
 const filterList = ["All", "Ru", "En", "< 30$", "> 30$"];
 
@@ -10,38 +11,27 @@ export function CatalogPage({
   setActiveFilter,
   tovarList,
 }) {
-  const displayFilterList = filterList.map((el) => (
-    <Filter
-      children={el}
-      activeFilter={activeFilter}
-      setActiveFilter={setActiveFilter}
-    />
-  ));
-  const displayTovarList =
-    activeFilter === "Ru" || activeFilter === "En"
-      ? tovarList
-          .filter((el) => el.lang === activeFilter || activeFilter === "All")
-          .map((item) => <TovarCard key={item.id} item={item} />)
-      : activeFilter[0] === "<"
-      ? tovarList
-          .filter((el) => el.price <= 30 || activeFilter === "All")
-          .map((item) => <TovarCard key={item.id} item={item} />)
-      : tovarList
-          .filter((el) => el.price > 30 || activeFilter === "All")
-          .map((item) => <TovarCard key={item.id} item={item} />);
+
+  // Фильтр по введенным данным
+  const [inputValue, setInputValue] = useState("");
+  const handleChangeInputValue = (e) => {
+    setInputValue(e.target.value);
+  };
 
   return (
-    <div className={`${s.catalogPage} ${currentTheme && `${s.nightTheme}`}`}>
-      <div className={s.pa1}>
-        <div className={s.pa1_container}>
-          <h2 className={`${s.tittle} ${s.leftTxt}`}>Каталог</h2>
-          <div className={s.catalog_header}>
-            <h2 className={`${s.tittle} ${s.leftTxt}`}>Альбомы</h2>
-            <div className={s.filters}>{displayFilterList}</div>
-          </div>
-          <div className={s.tovars}>{displayTovarList}</div>
-        </div>
-      </div>
-    </div>
+    <CatalogLayout currentTheme={currentTheme}>
+      <CatalogHeader
+        filterList={filterList}
+        activeFilter={activeFilter}
+        setActiveFilter={setActiveFilter}
+        inputValue={inputValue}
+        handleChangeInputValue={handleChangeInputValue}
+      />
+      <Tovars
+        activeFilter={activeFilter}
+        tovarList={tovarList}
+        inputValue={inputValue}
+      />
+    </CatalogLayout>
   );
 }
