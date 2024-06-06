@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { PopUp } from "../components/uikit/PopUp/PopUp";
 import { RegPopUp } from "../components/uikit/PopUp/miniComponents/RegPopUp";
 import { LogPopUp } from "../components/uikit/PopUp/miniComponents/LogPopUp";
-import { BuyPopUp } from "../components/uikit/PopUp/miniComponents/BuyPopup";
+import BuyPopUp from "./uikit/PopUp/miniComponents/BuyPopUp";
 import { usePopupManager } from "../hooks/usePopupManager";
 
 export function AppLayout({ children }) {
