@@ -2,21 +2,9 @@ import { CatalogLayout } from "./miniComponents/CatalogLayout";
 import { CatalogHeader } from "./miniComponents/CatalogHeader";
 import { Tovars } from "./miniComponents/Tovars";
 import { useState } from "react";
+import { filterList } from "../../constants";
 
-export function CatalogPage({
-  currentTheme,
-  activeFilter,
-  setActiveFilter,
-}) {
-  // Список фильров
-  const [filterList, setFilterList] = useState([
-    "All",
-    "Ru",
-    "En",
-    "< 30$",
-    "> 30$",
-  ]);
-
+export function CatalogPage({ currentTheme, activeFilter, setActiveFilter }) {
   // Фильтр по введенным данным
   const [inputValue, setInputValue] = useState("");
   const handleChangeInputValue = (e) => {
@@ -32,10 +20,7 @@ export function CatalogPage({
         inputValue={inputValue}
         handleChangeInputValue={handleChangeInputValue}
       />
-      <Tovars
-        activeFilter={activeFilter}
-        inputValue={inputValue}
-      />
+      <Tovars activeFilter={activeFilter} inputValue={inputValue} />
     </CatalogLayout>
   );
 }

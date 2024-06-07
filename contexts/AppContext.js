@@ -1,12 +1,17 @@
 import { createContext, useState } from "react";
-import { discount } from "../components/constants";
-import { priceCondition } from "../components/constants";
-import { langCondition } from "../components/constants";
+import {
+  discount,
+  filterList,
+  theme,
+  priceCondition,
+  langCondition,
+} from "../components/constants";
+
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [currentTheme, setCurrentTheme] = useState(false); //  тема: светлая - false; темная - true;
-  const [activeFilter, setActiveFilter] = useState("All"); //  фильтры для перебора товаров в странице catalog
+  const [currentTheme, setCurrentTheme] = useState(theme); //  тема
+  const [activeFilter, setActiveFilter] = useState(filterList[0]); //  фильтры для перебора товаров на странице catalog; по умолчанию "All"
   const [tovarList, setTovarList] = useState([
     {
       id: 1,

@@ -2,8 +2,9 @@ import { useContext, useState } from "react";
 import s from "./../CartPage.module.css";
 import Image from "next/image";
 import { AppContext } from "../../../../contexts/AppContext";
+import Link from "next/link";
 
-export function CartItem({item}) {
+export function CartItem({ item }) {
   const { cartList, setCartList } = useContext(AppContext);
   const [count, setCount] = useState(item.count);
 
@@ -29,13 +30,15 @@ export function CartItem({item}) {
   return (
     <div className={s.korzinaItem}>
       <div className={s.korzina_tovar_image_div}>
-        <Image
-          src={item.cover}
-          alt="tovar"
-          className={s.korzina_tovar_image}
-          width={120}
-          height={120}
-        />
+        <Link href={`/catalog/${item.id}`}>
+          <Image
+            src={item.cover}
+            alt="tovar"
+            className={s.korzina_tovar_image}
+            width={120}
+            height={120}
+          />
+        </Link>
       </div>
       <h3 className={s.korzina_tovar_title}>{item.title}</h3>
       <h4 className={s.korzina_tovar_artist}>{item.artist}</h4>
