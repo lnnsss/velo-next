@@ -1,7 +1,7 @@
 import { useState } from "react";
 import s from "./AddPage.module.css";
 
-export function AddPage({ currentTheme, tovarList, setTovarList }) {
+export function AddPage({ currentTheme, finalTovarList, setFinalTovarList }) {
   const emptyFormData = {
     id: "",
     title: "",
@@ -14,6 +14,7 @@ export function AddPage({ currentTheme, tovarList, setTovarList }) {
     artist: "",
     price: "",
     lang: "Ru",
+    img: [],
     withoutPage: true,
   });
 
@@ -22,7 +23,7 @@ export function AddPage({ currentTheme, tovarList, setTovarList }) {
     setFormData({
       ...formData,
       [name]: value,
-      id: tovarList.length + 1,
+      id: finalTovarList.length + 1,
     });
   };
   const handleFormSubmit = (e) => {
@@ -42,7 +43,7 @@ export function AddPage({ currentTheme, tovarList, setTovarList }) {
       return;
     }
 
-    setTovarList((tovarList) => [...tovarList, newTovar]);
+    setFinalTovarList((finalTovarList) => [...finalTovarList, newTovar]);
     setFormData({ ...emptyFormData });
     alert("Релиз добавлен в каталог!");
   };

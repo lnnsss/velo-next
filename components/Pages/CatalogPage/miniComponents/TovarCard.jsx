@@ -19,7 +19,16 @@ export function TovarCard({
 
   // Добавление в корзину
   const handleAddToCartLocal = (e) => {
-    handleAddToCart(cartList, setCartList, id, cover, title, artist, price, discountPrice);
+    handleAddToCart(
+      cartList,
+      setCartList,
+      id,
+      cover,
+      title,
+      artist,
+      price,
+      discountPrice
+    );
   };
 
   // Если релиз был добавлен пользователем, то у него не будет своей страницы
@@ -105,7 +114,10 @@ function UserTovar({ id, lang, artist, title, price }) {
         />
         <h4 className={s.tovar_title}>{title}</h4>
         <span className={s.tovar_artist}>{artist}</span>
-        <span className={s.tovar_price}>{price}$</span>
+        <span className={s.tovar_price}>
+          <span className={s.tovar_price_title}>Цена: </span>
+          {price}$
+        </span>
       </div>
       <button
         className={s.tovar_btn}

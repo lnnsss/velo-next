@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import { discount } from "../components/constants";
 import { priceCondition } from "../components/constants";
-
+import { langCondition } from "../components/constants";
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
@@ -729,7 +729,7 @@ export const AppProvider = ({ children }) => {
       let newPrice = el.price - (el.price / 100) * discount;
 
       // Перебор по условию
-      if (el.price >= priceCondition) {
+      if (el.price >= priceCondition || el.lang === langCondition) {
         el.discountPrice = Math.ceil(newPrice);
       }
       return el;
@@ -750,6 +750,7 @@ export const AppProvider = ({ children }) => {
         cartCounter,
         handleSetCartCounter,
         finalTovarList,
+        setFinalTovarList,
       }}
     >
       {children}
