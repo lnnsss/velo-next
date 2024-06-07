@@ -7,19 +7,19 @@ import { TovarPage } from "../../components/Pages/TovarPage/TovarPage";
 export default function tovar() {
   const { currentTheme, setCurrentTheme } = useContext(AppContext);
   const { cartList, setCartList } = useContext(AppContext);
-  const { tovarList, setTovarList } = useContext(AppContext);
+  const { finalTovarList, setFinalTovarList } = useContext(AppContext);
 
   const router = useRouter();
   const [tovar, setTovar] = useState(null);
 
-  // поиск нужного товара в массиве обьектов tovarList
+  // поиск нужного товара в массиве обьектов finalTovarList
   useEffect(() => {
     const { id } = router.query;
     if (id) {
-      const foundTovar = tovarList.find((el) => Number(el.id) === Number(id));
+      const foundTovar = finalTovarList.find((el) => Number(el.id) === Number(id));
       setTovar(foundTovar);
     }
-  }, [router.query, tovarList]);
+  }, [router.query, finalTovarList]);
 
   return (
     <PageLayout

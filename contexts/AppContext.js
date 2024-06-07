@@ -1,4 +1,6 @@
 import { createContext, useState } from "react";
+import { discount } from "../components/constants";
+import { priceCondition } from "../components/constants";
 
 export const AppContext = createContext();
 
@@ -511,17 +513,17 @@ export const AppProvider = ({ children }) => {
           "https://t2.genius.com/unsafe/340x340/https%3A%2F%2Fimages.genius.com%2F355f33f4ba1d30432569fd13fa2e3a9e.1000x1000x1.png",
       },
       trackList: {
-        "Imagine!":[],
-        "Girls Cry 2!":[],
-        "Way Up!":[],
-        "Tap In!":[],
-        "Rover!":[],
-        "In Love!":[],
-        "Perfect!":[],
-        "Flowers!":[],
-        "Prada me!":[],
-        "Go!":[],
-        "Superstar!":[],
+        "Imagine!": [],
+        "Girls Cry 2!": [],
+        "Way Up!": [],
+        "Tap In!": [],
+        "Rover!": [],
+        "In Love!": [],
+        "Perfect!": [],
+        "Flowers!": [],
+        "Prada me!": [],
+        "Go!": [],
+        "Superstar!": [],
       },
       lang: "En",
       date: "22 Декабря 2022",
@@ -721,6 +723,18 @@ export const AppProvider = ({ children }) => {
   const handleSetCartCounter = () => {
     setCartCounter(cartList.reduce((acc, obj) => acc + obj.count, 0));
   }; // функция для обновления счетчика товаров в корзине
+  const [finalTovarList, setFinalTovarList] = useState(
+    tovarList.map((el) => {
+      // Цена с учетом скидки
+      let newPrice = el.price - (el.price / 100) * discount;
+
+      // Перебор по условию
+      if (el.price >= priceCondition) {
+        el.discountPrice = Math.ceil(newPrice);
+      }
+      return el;
+    })
+  ); // Скидка на товары
 
   return (
     <AppContext.Provider
@@ -735,6 +749,7 @@ export const AppProvider = ({ children }) => {
         setCartList,
         cartCounter,
         handleSetCartCounter,
+        finalTovarList,
       }}
     >
       {children}

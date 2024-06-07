@@ -6,8 +6,8 @@ export function OtherCovers({ tovar }) {
   // Обложки товара
   const thisCovers = tovar.img;
   const coversArray = Object.entries(thisCovers).slice(1);
-  const displayCovers = coversArray.map(([key, value]) => (
-    <Cover key={key} title={key} img={value} />
+  const displayCovers = coversArray.map(([key, value], i) => (
+    <Cover key={i} title={key} img={value} />
   ));
 
   return (
@@ -18,7 +18,7 @@ export function OtherCovers({ tovar }) {
   );
 }
 
-function Cover({ img, title, key }) {
+function Cover({ img, title }) {
   const { isFullScreen, toggleFullScreen } = useCoverFullScreen();
 
   return (
@@ -28,8 +28,8 @@ function Cover({ img, title, key }) {
     >
       <Image
         className={`${s.otherCover} ${isFullScreen ? s.fullScreenCover : ""}`}
-        key={key}
         src={img}
+        alt={title}
         title={isFullScreen ? "" : title}
         width={isFullScreen ? 520 : 220}
         height={isFullScreen ? 520 : 220}

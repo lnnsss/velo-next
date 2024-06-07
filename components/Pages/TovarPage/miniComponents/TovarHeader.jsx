@@ -22,6 +22,7 @@ export function TovarHeader({ tovar, handleAddToCart }) {
             className={`${s.tovar_cover} ${
               isFullScreen ? s.fullScreenCover : ""
             }`}
+            alt="cover"
             src={tovar.img.cover}
             width={isFullScreen ? 520 : 300}
             height={isFullScreen ? 520 : 300}
@@ -36,7 +37,12 @@ export function TovarHeader({ tovar, handleAddToCart }) {
             className={`${s.tovar_header_button} ${s.buyButton}`}
             onClick={handleAddToCart}
           >
-            {tovar.price}$
+            <span className={s.btn_price}>
+              <span className={tovar.discountPrice && s.oldPrice}>
+                {tovar.price}
+              </span>
+              {tovar.discountPrice}
+            </span>
           </button>
           {tovar.yandex && <YandexBtn src={tovar.yandex} />}
         </div>

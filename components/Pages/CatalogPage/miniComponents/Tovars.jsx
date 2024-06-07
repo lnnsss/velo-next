@@ -1,9 +1,15 @@
+import { useContext } from "react";
 import s from "./../CatalogPage.module.css";
 import { TovarCard } from "./TovarCard";
+import { AppContext } from "../../../../contexts/AppContext";
 
-export function Tovars({ activeFilter, inputValue, tovarList }) {
+export function Tovars({ activeFilter, inputValue }) {
+
+  // Скидка на товары
+  const { finalTovarList } = useContext(AppContext);
+
   // Фильтрация товаров
-  const filteredTovarList = tovarList.filter((el) => {
+  const filteredTovarList = finalTovarList.filter((el) => {
     let isMatch = true;
 
     if (inputValue) {
@@ -18,9 +24,17 @@ export function Tovars({ activeFilter, inputValue, tovarList }) {
     }
 
     if (activeFilter[0] === "<") {
-      isMatch = el.price <= 30 && isMatch;
+      if (el.discountPrice) {
+        isMatch = el.discountPrice <= 30 && isMatch;
+      } else {
+        isMatch = el.price <= 30 && isMatch;
+      }
     } else if (activeFilter[0] === ">") {
-      isMatch = el.price > 30 && isMatch;
+      if (el.discountPrice) {
+        isMatch = el.discountPrice > 30 && isMatch;
+      } else {
+        isMatch = el.price > 30 && isMatch;
+      }
     }
 
     return isMatch;
@@ -31,11 +45,23 @@ export function Tovars({ activeFilter, inputValue, tovarList }) {
       {filteredTovarList.length ? (
         <div className={s.tovars}>
           {filteredTovarList.map((item) => (
-            <TovarCard key={item.id} item={item} />
+            <TovarCard
+              key={item.id}
+              id={item.id}
+              lang={item.lang}
+              artist={item.artist}
+              title={item.title}
+              price={item.price}
+              withoutPage={item.withoutPage}
+              cover={item.img.cover}
+              discountPrice={item.discountPrice}
+            />
           ))}
         </div>
       ) : (
-        <span className={s.isNotItems}>Нет товаров подходящих по условиям</span>
+        <span className={s.isNotItems}>
+          Нет товаров, подходящих по условиям
+        </span>
       )}
     </div>
   );

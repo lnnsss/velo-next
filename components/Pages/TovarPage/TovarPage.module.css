@@ -101,6 +101,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 3px;
+}
+.btn_price {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.btn_price::after {
+  margin: 0 0 0 -3px;
+  content: "$";
+}
+.oldPrice {
+  text-decoration: line-through;
 }
 .buyButton {
   margin: auto 0 10px 0;

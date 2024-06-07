@@ -3,93 +3,113 @@ import s from "./../CatalogPage.module.css";
 import { useContext } from "react";
 import { AppContext } from "../../../../contexts/AppContext";
 import Link from "next/link";
+import { handleAddToCart } from "../../../utils";
 
-export function TovarCard({ item }) {
-  const { tovarList, setTovarList } = useContext(AppContext);
+export function TovarCard({
+  id,
+  lang,
+  artist,
+  title,
+  price,
+  cover,
+  withoutPage,
+  discountPrice,
+}) {
   const { cartList, setCartList } = useContext(AppContext);
 
-  const handleAddToCart = (e) => {
-    let tovarId = Number(e.target.id.slice(4));
-    let newItem = tovarList.find((el) => el.id === tovarId);
-    console.log(newItem);
-    let newCartItem = {
-      id: newItem.id,
-      img: newItem.img.cover,
-      title: newItem.title,
-      artist: newItem.artist,
-      price: newItem.price,
-      count: 1,
-      totalPrice: newItem.price * 1,
-    };
-    let existingCartItem = cartList.find((el) => el.id === newCartItem.id);
-
-    // Счетчик количества товара в шапке
-    if (existingCartItem) {
-      existingCartItem.count++;
-      existingCartItem.totalPrice =
-        existingCartItem.price * existingCartItem.count;
-      setCartList([...cartList]);
-    } else {
-      setCartList([...cartList, newCartItem]);
-    }
-    console.log(cartList);
+  // Добавление в корзину
+  const handleAddToCartLocal = (e) => {
+    handleAddToCart(cartList, setCartList, id, cover, title, artist, price, discountPrice);
   };
 
   // Если релиз был добавлен пользователем, то у него не будет своей страницы
   return (
-    <div id={`item_${item.id}`} key={item.id} className={s.tovar_wrapper}>
-      {item.withoutPage ? (
-        <UserTovar item={item} handleAddToCart={handleAddToCart} />
+    <div id={`item_${id}`} key={id} className={s.tovar_wrapper}>
+      {withoutPage ? (
+        <UserTovar
+          id={id}
+          lang={lang}
+          artist={artist}
+          title={title}
+          price={price}
+        />
       ) : (
-        <BaseTovar item={item} handleAddToCart={handleAddToCart} />
+        <BaseTovar
+          id={id}
+          lang={lang}
+          artist={artist}
+          title={title}
+          price={price}
+          discountPrice={discountPrice}
+          cover={cover}
+          handleAddToCart={handleAddToCartLocal}
+        />
       )}
     </div>
   );
 }
 
-function BaseTovar({ item, handleAddToCart }) {
+function BaseTovar({
+  id,
+  lang,
+  artist,
+  title,
+  price,
+  discountPrice,
+  cover,
+  handleAddToCart,
+}) {
   return (
-    <>
-      <Link href={`/catalog/${item.id}`} className={`${s.tovar} ${item.lang}`}>
+    <div key={id}>
+      <Link href={`/catalog/${id}`} className={`${s.tovar} ${lang}`}>
         <Image
-          src={item.img.cover}
-          alt={item.title}
+          src={cover}
+          alt={title}
           className={s.tovar_image}
           width={240}
           height={240}
         />
-        <h4 className={s.tovar_title}>{item.title}</h4>
-        <span className={s.tovar_artist}>{item.artist}</span>
-        <span className={s.tovar_price}>{item.price}$</span>
+        <h4 className={s.tovar_title}>{title}</h4>
+        <span className={s.tovar_artist}>{artist}</span>
+        <span className={s.tovar_price}>
+          <span className={s.tovar_price_title}>Цена: </span>
+          {price}$
+        </span>
+        {discountPrice && (
+          <span className={`${s.tovar_price} ${s.discount}`}>
+            <span className={s.tovar_price_title}>Цена со скидкой: </span>
+            {discountPrice}$
+          </span>
+        )}
       </Link>
       <button
         className={s.tovar_btn}
-        id={`btn_${item.id}`}
+        id={`btn_${id}`}
         onClick={handleAddToCart}
       >
         В корзину
       </button>
-    </>
+    </div>
   );
 }
-function UserTovar({ item, handleAddToCart }) {
+function UserTovar({ id, lang, artist, title, price }) {
   return (
     <>
-      <div className={`${s.tovar} ${item.lang}`}>
+      <div className={`${s.tovar} ${lang}`} key={id}>
         <Image
           src="https://mywebicons.ru/i/jpg/1db25ba3ca78c326db6600d1a1bd36f7.jpg"
-          alt={item.title}
+          alt={title}
           className={s.tovar_image}
           width={240}
           height={240}
         />
-        <h4 className={s.tovar_title}>{item.title}</h4>
-        <span className={s.tovar_artist}>{item.artist}</span>
-        <span className={s.tovar_price}>{item.price}$</span>
+        <h4 className={s.tovar_title}>{title}</h4>
+        <span className={s.tovar_artist}>{artist}</span>
+        <span className={s.tovar_price}>{price}$</span>
       </div>
       <button
         className={s.tovar_btn}
-        id={`btn_${item.id}`}
+        id={`btn_${id}`}
         onClick={() => {
           alert("Данного товара не существует.");
         }}

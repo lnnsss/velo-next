@@ -9,8 +9,9 @@ export function CatalogHeader({
   handleChangeInputValue,
 }) {
   // Фильтры
-  const displayFilterList = filterList.map((el) => (
+  const displayFilterList = filterList.map((el, index) => (
     <Filter
+      key={index}
       children={el}
       activeFilter={activeFilter}
       setActiveFilter={setActiveFilter}

@@ -5,42 +5,36 @@ import { TovarHeader } from "./miniComponents/TovarHeader";
 import { Tracklist } from "./miniComponents/Tracklist";
 import { Description } from "./miniComponents/Description";
 import { OtherCovers } from "./miniComponents/otherCovers";
+import { handleAddToCart } from "../../utils";
 
 export function TovarPage({ currentTheme, tovar }) {
   const { cartList, setCartList } = useContext(AppContext);
-  const { tovarList } = useContext(AppContext);
+  const { finalTovarList } = useContext(AppContext);
+  const id = tovar.id,
+    cover = tovar.img.cover,
+    title = tovar.title,
+    artist = tovar.artist,
+    discountPrice = tovar.discountPrice,
+    price = tovar.price;
 
-  // Функция для добавления товара в корзину
-  const handleAddToCart = (e) => {
-    let tovarId = Number(e.target.id.slice(4));
-    let newItem = tovarList.find((el) => el.id === tovarId);
-    console.log(newItem);
-    let newCartItem = {
-      id: newItem.id,
-      img: newItem.img.cover,
-      title: newItem.title,
-      artist: newItem.artist,
-      price: newItem.price,
-      count: 1,
-      totalPrice: newItem.price * 1,
-    };
-    let existingCartItem = cartList.find((el) => el.id === newCartItem.id);
-
-    if (existingCartItem) {
-      existingCartItem.count++;
-      existingCartItem.totalPrice =
-        existingCartItem.price * existingCartItem.count;
-      setCartList([...cartList]);
-    } else {
-      setCartList([...cartList, newCartItem]);
-    }
-    console.log(cartList);
+  // Добавление в корзину
+  const handleAddToCartLocal = (e) => {
+    handleAddToCart(
+      cartList,
+      setCartList,
+      id,
+      cover,
+      title,
+      artist,
+      price,
+      discountPrice
+    );
   };
 
   return (
     <div className={`${s.tovarPage} ${currentTheme && `${s.nightTheme}`}`}>
       <div className={s.pa1}>
-        <TovarHeader tovar={tovar} handleAddToCart={handleAddToCart} />
+        <TovarHeader tovar={tovar} handleAddToCart={handleAddToCartLocal} />
         <div className={`${s.pa1_container} ${s.grid_container}`}>
           <Tracklist tovar={tovar} />
           <Description tovar={tovar} />

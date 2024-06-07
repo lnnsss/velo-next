@@ -45,7 +45,6 @@ export function AddPage({ currentTheme, tovarList, setTovarList }) {
     setTovarList((tovarList) => [...tovarList, newTovar]);
     setFormData({ ...emptyFormData });
     alert("Релиз добавлен в каталог!");
-    console.log(tovarList);
   };
 
   return (

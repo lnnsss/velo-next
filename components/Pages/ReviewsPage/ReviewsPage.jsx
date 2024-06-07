@@ -46,7 +46,7 @@ export function ReviewsPage({ currentTheme }) {
       img: "https://i.pinimg.com/564x/9b/a0/af/9ba0af5d4e47d13498923c49da86c21d.jpg",
     },
   ];
-  const displayReviews = reviewsList.map((el) => <Review review={el} />);
+  const displayReviews = reviewsList.map((el, i) => <Review review={el} key={i} />);
 
   return (
     <div className={`${s.reviewsPage} ${currentTheme && `${s.nightTheme}`}`}>

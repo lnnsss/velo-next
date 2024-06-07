@@ -5,7 +5,7 @@ export function Tracklist({ tovar }) {
   const thisTracklist = tovar.trackList;
   const tracklistArray = Object.entries(thisTracklist);
   const displayTracks = tracklistArray.map(([key, value], i) => (
-    <Track key={key} title={key} feats={value} numb={i + 1} />
+    <Track key={i} title={key} feats={value} numb={i + 1} />
   ));
 
   return (
@@ -16,14 +16,14 @@ export function Tracklist({ tovar }) {
   );
 }
 
-function Track({ title, numb, feats, key }) {
+function Track({ title, numb, feats }) {
   let featsString = "";
   if (feats.length) {
     featsString = feats.join(", ") + ".";
   }
 
   return (
-    <div className={`${s.track}`} key={key}>
+    <div className={`${s.track}`}>
       <span className={s.trackNumb}>{numb}.</span>
       <div className={s.trackTitle}>
         {title}

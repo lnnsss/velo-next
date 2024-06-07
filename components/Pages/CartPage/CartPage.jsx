@@ -3,7 +3,7 @@ import { BuyFooter } from "./miniComponents/BuyFooter";
 import { CartItem } from "./miniComponents/CartItem";
 
 export function CartPage({ currentTheme, cartList, setCartList }) {
-  const displayCartList = cartList.map((item) => <CartItem item={item} />);
+  const displayCartList = cartList.map((item, i) => <CartItem item={item} key={i} />);
 
   return (
     <div className={`${s.cartPage} ${currentTheme && `${s.nightTheme}`}`}>
