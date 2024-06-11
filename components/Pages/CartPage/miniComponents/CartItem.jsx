@@ -41,7 +41,7 @@ export function CartItem({ item }) {
         </Link>
       </div>
       <h3 className={s.korzina_tovar_title}>{item.title}</h3>
-      <h4 className={s.korzina_tovar_artist}>{item.artist}</h4>
+      <h4 className={s.korzina_tovar_artist}>{item.artist.join(", ")}</h4>
       <h4 className={s.korzina_tovar_price}>{item.totalPrice}$</h4>
       <div className={s.korzina_tovar_btns}>
         <button

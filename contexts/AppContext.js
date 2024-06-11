@@ -16,7 +16,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 1,
       title: "test drive: archive",
-      artist: "LILDRUGHILL",
+      artist: ["LILDRUGHILL"],
       price: 25,
       img: {
         cover:
@@ -48,7 +48,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 2,
       title: "PHYSICAL PAIN",
-      artist: "LOVV66",
+      artist: ["LOVV66"],
       price: 20,
       img: {
         cover:
@@ -83,7 +83,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 3,
       title: "DAMN.",
-      artist: "Kendrick Lamar",
+      artist: ["Kendrick Lamar"],
       price: 50,
       img: {
         cover:
@@ -148,7 +148,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 4,
       title: "WILD EA$T",
-      artist: "SALUKI",
+      artist: ["SALUKI"],
       price: 50,
       img: {
         cover:
@@ -213,7 +213,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 5,
       title: "Life of a DON",
-      artist: "Don Toliver",
+      artist: ["Don Toliver"],
       price: 30,
       img: {
         cover:
@@ -256,7 +256,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 6,
       title: "KRISTINA",
-      artist: "LIL KRYSTALLL",
+      artist: ["LIL KRYSTALLL"],
       price: 30,
       img: {
         cover:
@@ -300,7 +300,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 7,
       title: "Sosa Muzik",
-      artist: "Платина",
+      artist: ["Платина"],
       price: 30,
       img: {
         cover:
@@ -344,7 +344,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 8,
       title: "Certified Lover Boy",
-      artist: "Drake",
+      artist: ["Drake"],
       price: 35,
       img: {
         cover:
@@ -392,7 +392,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 9,
       title: "All Babies Fly",
-      artist: "LILDRUGHILL",
+      artist: ["LILDRUGHILL"],
       price: 30,
       img: {
         cover:
@@ -436,7 +436,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 10,
       title: "POLAR NIGHT",
-      artist: "kondachelo",
+      artist: ["kondachelo"],
       price: 20,
       img: {
         cover:
@@ -465,7 +465,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 11,
       title: "Heroes & Villains",
-      artist: "Metro Boomin",
+      artist: ["Metro Boomin"],
       price: 50,
       img: {
         cover:
@@ -507,7 +507,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 12,
       title: "SUPERSTAR! (Deluxe)",
-      artist: "Dina Ayada",
+      artist: ["Dina Ayada"],
       price: 30,
       img: {
         cover:
@@ -541,7 +541,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 13,
       title: "PHILARMONIA",
-      artist: "PHARAOH",
+      artist: ["PHARAOH"],
       price: 50,
       img: {
         cover:
@@ -574,7 +574,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 14,
       title: "23",
-      artist: "Central Cee",
+      artist: ["Central Cee"],
       price: 35,
       img: {
         cover:
@@ -623,7 +623,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 15,
       title: "AA LANGUAGE",
-      artist: "Aarne",
+      artist: ["Aarne"],
       price: 40,
       img: {
         cover:
@@ -673,7 +673,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 16,
       title: "PLAYERS CLUB 2",
-      artist: "OBLADAET",
+      artist: ["OBLADAET"],
       price: 30,
       img: {
         cover:

@@ -275,6 +275,15 @@
   gap: 27.5px;
   flex-wrap: wrap;
 }
+.moreFrom_container > * {
+  border: 1px solid var(--grey);
+  cursor: pointer;
+  user-select: none;
+  transition: 0.5s;
+}
+.moreFrom_container > *:hover {
+  border: 1px solid var(--red);
+}
 
 /*----media---------------------------------*/
 
@@ -317,10 +326,13 @@
     grid-row: 3 / 4;
     align-items: center;
   }
+  .moreFrom {
+    text-align: center;
+  }
 }
 
 @media (max-width: 472px) {
-  .otherCovers_container {
+  .otherCovers_container, .moreFrom_container {
     flex-direction: column;
   }
   .fullScreenCover {

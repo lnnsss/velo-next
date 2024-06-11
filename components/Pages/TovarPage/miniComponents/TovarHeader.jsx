@@ -30,7 +30,7 @@ export function TovarHeader({ tovar, handleAddToCart }) {
         </div>
         <div className={s.tovar_header_text}>
           <h2 className={s.tovar_header_title}>{tovar.title}</h2>
-          <h2 className={s.tovar_header_artist}>{tovar.artist}</h2>
+          <h2 className={s.tovar_header_artist}>{tovar.artist.join(", ")}</h2>
           <h2 className={s.tovar_header_date}>{tovar.date}</h2>
           <button
             id={`btn_${tovar.id}`}

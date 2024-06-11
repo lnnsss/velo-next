@@ -10,7 +10,7 @@ export function MoreFrom({ artist, moreAlbums }) {
 
   return (
     <div className={s.moreFrom}>
-      <h2 className={s.tittle}>More From {artist}</h2>
+      <h2 className={s.tittle}>More From {artist.join(", ")}</h2>
       <div className={s.moreFrom_container}>{displayMoreAlbums}</div>
     </div>
   );

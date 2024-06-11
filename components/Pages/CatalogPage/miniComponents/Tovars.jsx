@@ -15,7 +15,7 @@ export function Tovars({ activeFilter, inputValue }) {
     if (inputValue) {
       isMatch =
         (el.title.toLowerCase().includes(inputValue.toLowerCase()) ||
-          el.artist.toLowerCase().includes(inputValue.toLowerCase())) &&
+          el.artist.join(", ").toLowerCase().includes(inputValue.toLowerCase())) &&
         isMatch;
     }
 

@@ -5,8 +5,8 @@ import { TovarHeader } from "./miniComponents/TovarHeader";
 import { Tracklist } from "./miniComponents/Tracklist";
 import { Description } from "./miniComponents/Description";
 import { OtherCovers } from "./miniComponents/OtherCovers";
-import { handleAddToCart } from "../../utils";
 import { MoreFrom } from "./miniComponents/MoreFrom";
+import { handleAddToCart } from "../../utils";
 
 export function TovarPage({ currentTheme, tovar }) {
   const { cartList, setCartList } = useContext(AppContext);
@@ -20,7 +20,7 @@ export function TovarPage({ currentTheme, tovar }) {
 
   // остальные релизами этого исполнителя на сайте
   const moreAlbums = finalTovarList.filter(
-    (el) => el.artist === artist && el.title != title
+    (el) => artist.some(a => el.artist.includes(a)) && el.title !== title
   );
 
   // Добавление в корзину

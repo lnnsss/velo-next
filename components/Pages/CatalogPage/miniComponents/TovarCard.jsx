@@ -79,7 +79,7 @@ function BaseTovar({
           height={240}
         />
         <h4 className={s.tovar_title}>{title}</h4>
-        <span className={s.tovar_artist}>{artist}</span>
+        <span className={s.tovar_artist}>{artist.join(", ")}</span>
         <span className={s.tovar_price}>
           <span className={s.tovar_price_title}>Цена: </span>
           {price}$
