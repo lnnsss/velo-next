@@ -9,7 +9,7 @@ export function MainPage({ currentTheme }) {
         <div className={s.pa1_container}>
           <h1 className={s.mainTittle}>Velo</h1>
           <span className={s.podTittle}>
-            Cайт по продаже виниловых пластинок лучших артистов страны
+            Cайт по продаже виниловых пластинок лучших артистов современности
           </span>
         </div>
       </div>

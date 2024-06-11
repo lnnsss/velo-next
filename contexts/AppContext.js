@@ -623,7 +623,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 15,
       title: "AA LANGUAGE",
-      artist: "aarne",
+      artist: "Aarne",
       price: 40,
       img: {
         cover:

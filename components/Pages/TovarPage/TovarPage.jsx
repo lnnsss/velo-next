@@ -4,8 +4,9 @@ import { AppContext } from "../../../contexts/AppContext";
 import { TovarHeader } from "./miniComponents/TovarHeader";
 import { Tracklist } from "./miniComponents/Tracklist";
 import { Description } from "./miniComponents/Description";
-import { OtherCovers } from "./miniComponents/otherCovers";
+import { OtherCovers } from "./miniComponents/OtherCovers";
 import { handleAddToCart } from "../../utils";
+import { MoreFrom } from "./miniComponents/MoreFrom";
 
 export function TovarPage({ currentTheme, tovar }) {
   const { cartList, setCartList } = useContext(AppContext);
@@ -16,6 +17,11 @@ export function TovarPage({ currentTheme, tovar }) {
     artist = tovar.artist,
     discountPrice = tovar.discountPrice,
     price = tovar.price;
+
+  // остальные релизами этого исполнителя на сайте
+  const moreAlbums = finalTovarList.filter(
+    (el) => el.artist === artist && el.title != title
+  );
 
   // Добавление в корзину
   const handleAddToCartLocal = (e) => {
@@ -39,6 +45,9 @@ export function TovarPage({ currentTheme, tovar }) {
           <Tracklist tovar={tovar} />
           <Description tovar={tovar} />
           <OtherCovers tovar={tovar} />
+          {moreAlbums.length ? (
+            <MoreFrom artist={artist} moreAlbums={moreAlbums} />
+          ) : null}
         </div>
       </div>
     </div>

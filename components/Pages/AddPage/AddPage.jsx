@@ -24,6 +24,7 @@ export function AddPage({ currentTheme, finalTovarList, setFinalTovarList }) {
       ...formData,
       [name]: value,
       id: finalTovarList.length + 1,
+      withoutPage: true,
     });
   };
   const handleFormSubmit = (e) => {
@@ -34,7 +35,8 @@ export function AddPage({ currentTheme, finalTovarList, setFinalTovarList }) {
     let hasEmptyProperties = Object.values(newTovar).some(
       (value) => value === ""
     );
-    let wrongPrice = newTovar.price < 10 || newTovar.price > 50;
+    let thisPrice = newTovar.price;
+    let wrongPrice = thisPrice < 10 || thisPrice > 50 || isNaN(thisPrice);
     if (hasEmptyProperties) {
       alert("Все поля  должны быть заполнены!");
       return;
