@@ -18,9 +18,9 @@ export function TovarPage({ currentTheme, tovar }) {
     discountPrice = tovar.discountPrice,
     price = tovar.price;
 
-  // остальные релизами этого исполнителя на сайте
+  // остальные релизы этого исполнителя(ей) на сайте
   const moreAlbums = finalTovarList.filter(
-    (el) => artist.some(a => el.artist.includes(a)) && el.title !== title
+    (el) => artist.some((a) => el.artist.includes(a)) && el.title !== title
   );
 
   // Добавление в корзину
@@ -45,9 +45,7 @@ export function TovarPage({ currentTheme, tovar }) {
           <Tracklist tovar={tovar} />
           <Description tovar={tovar} />
           <OtherCovers tovar={tovar} />
-          {moreAlbums.length ? (
-            <MoreFrom artist={artist} moreAlbums={moreAlbums} />
-          ) : null}
+          <MoreFrom artist={artist} moreAlbums={moreAlbums} />
         </div>
       </div>
     </div>

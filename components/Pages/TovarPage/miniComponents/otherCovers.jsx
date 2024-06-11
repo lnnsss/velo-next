@@ -9,13 +9,16 @@ export function OtherCovers({ tovar }) {
   const displayCovers = coversArray.map(([key, value], i) => (
     <Cover key={i} title={key} img={value} />
   ));
-
-  return (
-    <div className={s.otherCovers}>
-      <h2 className={s.tittle}>Other covers</h2>
-      <div className={s.otherCovers_container}>{displayCovers}</div>
-    </div>
-  );
+  if (displayCovers.length) {
+    return (
+      <div className={s.otherCovers}>
+        <h2 className={s.tittle}>Other covers</h2>
+        <div className={s.otherCovers_container}>{displayCovers}</div>
+      </div>
+    );
+  } else {
+    return null;
+  }
 }
 
 function Cover({ img, title }) {
