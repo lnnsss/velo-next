@@ -1,5 +1,5 @@
 import s from "./MainPage.module.css";
-import { DiscountBanner } from "./miniComponents/discountBanner";
+import { DiscountBanner } from "./miniComponents/DiscountBanner";
 
 export function MainPage({ currentTheme }) {
   return (
