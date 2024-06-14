@@ -4,9 +4,9 @@ import { AppContext } from "../../../contexts/AppContext";
 import { TovarHeader } from "./miniComponents/TovarHeader";
 import { Tracklist } from "./miniComponents/Tracklist";
 import { Description } from "./miniComponents/Description";
-import { OtherCovers } from "./miniComponents/OtherCovers";
 import { MoreFrom } from "./miniComponents/MoreFrom";
 import { handleAddToCart } from "../../utils";
+import { OtherCovers } from "./miniComponents/OtherCovers";
 
 export function TovarPage({ currentTheme, tovar }) {
   const { cartList, setCartList } = useContext(AppContext);
