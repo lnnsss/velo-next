@@ -4,7 +4,7 @@ import { AppContext } from "../../../contexts/AppContext";
 import { TovarHeader } from "./miniComponents/TovarHeader";
 import { Tracklist } from "./miniComponents/Tracklist";
 import { Description } from "./miniComponents/Description";
-import { OtherCovers } from "./miniComponents/OtherCovers";
+import { MoreCovers } from "./miniComponents/MoreCovers";
 import { MoreFrom } from "./miniComponents/MoreFrom";
 import { handleAddToCart } from "../../utils";
 
@@ -44,7 +44,7 @@ export function TovarPage({ currentTheme, tovar }) {
         <div className={`${s.pa1_container} ${s.grid_container}`}>
           <Tracklist tovar={tovar} />
           <Description tovar={tovar} />
-          <OtherCovers tovar={tovar} />
+          <MoreCovers tovar={tovar} />
           <MoreFrom artist={artist} moreAlbums={moreAlbums} />
         </div>
       </div>

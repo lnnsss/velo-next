@@ -2,7 +2,7 @@ import s from "./../TovarPage.module.css";
 import Image from "next/image";
 import { useCoverFullScreen } from "../../../../hooks/useCoverFullScreen";
 
-export function OtherCovers({ tovar }) {
+export function MoreCovers({ tovar }) {
   // Обложки товара
   const thisCovers = tovar.img;
   const coversArray = Object.entries(thisCovers).slice(1);
